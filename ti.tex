@@ -1,0 +1,225 @@
+\documentclass[ti]{texufpel} %use tid para doutorado e ti para mestrado
+
+\usepackage[utf8]{inputenc} % acentuacao
+\usepackage{graphicx} % para inserir figuras
+\usepackage[T1]{fontenc}
+\usepackage{lscape}
+\hypersetup{
+    hidelinks, % Remove coloração e caixas
+    unicode=true,   %Permite acentuação no bookmark
+    linktoc=all %Habilita link no nome e página do sumário
+}
+
+\unidade{Centro de Desenvolvimento Tecnológico}
+\programa{Programa de Pós-Graduação em Computação}
+\curso{Ciência da Computação}
+
+\title{Um levantamento da principais técnicas de Mineração de Dados Educacionais}
+
+\author{Costa}{Alexandre Gomes da}
+\advisor[Prof.~Dr.]{Mattos}{Julio Carlos Balzano de}
+\coadvisor[Prof.~Dr.]{Araujo}{Ricardo Matsumura}
+% \collaborator[Prof.~Dr.]{Tiago}{Tiago}https://www.overleaf.com/project/5bec20d8daf8193d55915174
+
+% \coadvisor[Prof.~Dr.]{Tiago}{Tiago}
+% \coadvisor[Prof.~Dr.]{Araujo}{Ricardo Matsumura}
+
+%Palavras-chave em PT_BR
+\keyword{mineração de dados educacionais}
+\keyword{learning analytics}
+\keyword{técnicas de predição}
+% \keyword{palavrachave-quatro}
+
+%Palavras-chave em EN_US
+\keywordeng{educational data mining}
+\keywordeng{learning analytics}
+\keywordeng{prediction techniques}
+% \keywordeng{keyword-four}
+
+\begin{document}
+
+%\renewcommand{\advisorname}{Orientadora}           %descomente caso tenhas orientadora
+%\renewcommand{\coadvisorname}{Coorientadora}      %descomente caso tenhas coorientadora
+
+\maketitle 
+
+\sloppy
+
+% \fichacatalografica
+
+%Opcional
+% \begin{dedicatoria}
+%   Dedico aos meus pais, irmão, namorada e a toda minha\\
+%   família e amigos que, com muito carinho e apoio, não\\
+%   mediram esforços para que eu chegasse até esta etapa\\
+%   de minha vida.
+% \end{dedicatoria}
+
+%Opcional
+% \begin{agradecimentos}
+%   Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla
+%   bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
+%   blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla
+%   blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
+%   Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla
+%   bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
+%   blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla
+%   blabla blablabla bla.  Bla blabla blablabla bla.
+% \end{agradecimentos}
+
+%Opcional
+% \begin{epigrafe}
+%   Bla blabla blablabla bla.\\
+%   Bla blabla blablabla bla.\\
+%   Bla blabla blablabla bla.\\
+%   Bla blabla blablabla bla.\\
+%   Bla blabla blablabla bla.\\
+%   {\sc --- Fulano de Tal}
+% \end{epigrafe}
+
+%Resumo em Portugues (no maximo 500 palavras)
+\begin{abstract}
+
+Uma grande quantidade de dados vem sendo produzida através de diversas modalidade de iteração em sistemas envolvendo alunos e professores. Contudo, grande parte desses dados não sofre qualquer tipos de analise. Nos últimos anos uma gama cada vez maior de trabalhos vem surgindo na área de Mineração de Dados Educacionais (MDE). Devido a essa grande quantidade de trabalhos é que se faz necessário fazer um levantamento para descobrir quais métodos, técnicas e algoritmos vem sendo utilizado, e ainda quais tipos de problemas vem sendo apurados. A pesquisa foi realizada, procurando responder as seguintes questões: Qual tem sido as técnicas utilizadas nos trabalhos na área. Qual tipo de dados estão sendo considerados pertinentes na área. Qual é o objetivo de estudo dos trabalhos na área. Qual são as ferramentas que tem sido utilizadas na área. O objetivo deste trabalho é fazer uma busca nas principais meios de publicações brasileiros que vem pesquisando MDE utilizando técnicas de predição.
+ 
+\end{abstract}
+
+\begin{englishabstract}%
+  {A survey of the main techniques of Educational Data Mining}
+  
+A large amount of data has been produced through several iteration modes in systems involving students and teachers. However, much of this data does not undergo any kind of analysis. In recent years a growing range of jobs has been emerging in the area of Educational Data Mining (EDM). Due to this large amount of work, it is necessary to make a survey to find out what methods, techniques and algorithms have been used, and what types of problems have been investigated. The research was carried out, trying to answer the following questions: What have been the techniques used in the works in the area. What kind of data is being considered relevant in the area. What is the purpose of studying the work in the area. What tools have been used in the area. The objective of this work is to search the main Brazilian publications media that have been researching EDM using prediction techniques.
+
+\end{englishabstract}
+
+%Lista de Figuras
+% \listoffigures
+
+%Lista de Tabelas
+\listoftables
+
+%lista de abreviaturas e siglas
+\begin{listofabbrv}{SPMD}
+        \item[IES] Instituição de Ensino Superiores
+        \item[MDE] Mineração de Dados Educacionais
+        \item[EDM] Educational Data Mining
+        \item[LA] Learning Analytics
+        % \item[SIMD] Single Instruction Multiple Data
+        % \item[SPMD] Single Program Multiple Data
+        % \item[ABNT] Associação Brasileira de Normas Técnicas
+\end{listofabbrv}
+
+%Sumario
+\tableofcontents
+
+\chapter{Introdução}
+
+A tecnologia vem trazendo mudanças significativas em toda a sociedade e está cada vez mais presente no dia a dia, seja na política, economia ou educação. A evolução tecnológica tem oportunizado um maior acesso à informação e com isso trazendo mudanças drásticas na área acadêmica, e o uso das Tecnologias de Informação e Comunicação (TIC) se torna importante nessa mudanças.
+
+Atualmente, é crescente a utilização de TIC's. Este fato permite uma maior integração entre as Instituições de Ensino, docentes e discentes, que passaram a utilizar a tecnologia para produzir e gerenciar conteúdos didáticos, elaborar disciplinas presenciais, semipresenciais e cursos totalmente a distância, com o objetivo final de gerar e adquirir conhecimento, tanto em caráter individual como coletivo.
+
+O uso destas tecnologias, como os Ambientes Virtuais de Aprendizagem (AVA), gera um enorme volume de dados, resultantes de interações e de registros de informações de professores, tutores, alunos, gestores e demais atores do sistema educacional. Este enorme volume de dados armazenado está sendo estudado por profissionais da área de Informática na Educação (IE)~\cite{santos2016analise}.
+
+Com a grande quantidade de dados educacionais sendo produzidos todos os dias Learning Analytics e Mineração de dados educacionais são duas áreas que tem entrado em evidência. Tendo em vista essa quantidade de dados e o volume de trabalhos sendo produzidos nessas áreas é difícil identificar quais métodos vem sendo utilizados com exito.
+
+Por isso que a ideia deste trabalho é fazer um levantamento de artigos dos últimos 5 anos que objetivam aplicar MDE utilizando técnicas de predição. O trabalho está organizado como segue. A seção 2 detalha a metodologia utilizada na pesquisa realizada. A seção 3 traz uma visão geral dos trabalhos na área de MDE nos últimos 5 anos e a seção 4 será apresentado as considerações finais.
+
+\chapter{Revisão Bibliográfica}
+\subsection{Metodologia}
+O apanhado de trabalhos nas áreas de MDE considerou os artigos publicados nos últimos 5 anos em periódicos e anais, no período de 2014 a 2018. Foram considerados para esta pesquisa alguns dos principais canais das áreas de MDE que retornou algum resultado:
+CBIE (Congresso Brasileiro de Informática na Educação);
+RBIE (Revista Brasileira de Informática na Educação);
+RENOTE (Revista Novas Tecnologias na Educação);
+SBIE (Simpósio Brasileiro de Informática na Educação).
+A pesquisa foi realizada nos sites de busca dos veículos, onde foram considerados apenas os trabalhos que focam nas área de MDE utilizando técnicas de predição. Foi utilizado o seguinte termo de busca: $(mde\ \vee\ ``mineração\ de\ dados\ educacionais``\ \vee\ edm\ \vee\ ``educational\ data\ mining``)\ \wedge\ predi*$, trazendo um total de 20 publicações.
+Os trabalhos considerados nesta pesquisa foram sintetizados conforme a Tabela~\ref{relacao-trabalhos}.
+O estudo realizado foi organizado procurando responder as seguintes questões de pesquisa:
+Q1 – Qual tem sido as técnicas utilizadas nos trabalhos na área?
+Q2 – Qual tipo de dados estão sendo considerados pertinentes na área?
+Q3 – Qual é o objetivo de estudo dos trabalhos na área?
+Q4 – Qual são as ferramentas que tem sido utilizadas na área?
+
+% \subsection{Principais Trabalhos na Literatura}
+
+% A Tabela XX apresenta um resumo dos principais trabalhos apontando a técnica utilizada, ...
+
+\begin{landscape}
+\begin{table}
+\begin{center}
+\caption{Relação de trabalhos}\label{relacao-trabalhos}
+\begin{tabular}{p{1.5cm}p{12cm}p{2cm}p{1.5cm}p{2.5cm}p{2.25cm}p{1cm}}
+\hline
+Local & Titulo & Técnicas & BD & Objetivo & Ferrramenta & Ano\\
+\hline
+{\small CBIE} & {\small\em Mineração de Dados Educacionais Aplicada à Análise Preditiva em Fóruns no Moodle} & {\small regressão} & {\small MOODLE} & {\small\em comportamento} & {\small N/I} & {\small 2016}\\
+{\small CBIE} & {\small\em Mineração de Dados Educacionais nos Resultados do ENEM de 2015} & {\small classificação} & {\small ENEM} & {\small\em desempenho} & {\small WEKA} & {\small 2018}\\
+{\small CBIE} & {\small\em Predição do desempenho de Matemática e Suas Tecnologias do ENEM utilizando técnicas de Mineração De Dados} & {\small classificação} & {\small ENEM} & {\small\em desempenho} & {\small WEKA} & {\small 2017}\\
+{\small RBIE} & {\small\em Aplicações de Mineração de Dados Educacionais e Learning Analytics com foco na evasão escolar: oportunidades e desafios} & {\small classificação} & {\small MOODLE} & {\small\em evasão /desempenho} & {\small Software desenvolvido} & {\small 2014}\\
+{\small RBIE} & {\small\em Estimativa de Desempenho Acadêmico de Estudantes: Análise da Aplicação de Técnicas de Mineração de Dados em Cursos a Distância} & {\small classificação} & {\small MOODLE} & {\small\em desempenho} & {\small WEKA} & {\small 2014}\\
+{\small RBIE} & {\small\em Modelagem e Predição de Reprovação de Acadêmicos de Cursos de Educação a Distância a partir da Contagem de Interações} & {\small classificação} & {\small MOODLE} & {\small\em evasão} & {\small WEKA} & {\small 2015}\\
+{\small RENOTE} & {\small\em Evidência do desânimo de alunos em um ambiente virtual de ensino e aprendizagem: uma proposta a partir da mineração de dados educacionais} & {\small classificação} & {\small MOODLE} & {\small\em comportamento} & {\small WEKA} & {\small 2015}\\
+{\small RENOTE} & {\small\em Mineração de Dados Educacionais Orientada por Atividades de Aprendizagem} & {\small regressão} & {\small MOODLE} & {\small\em desempenho} & {\small N/I} & {\small 2016}\\
+{\small RENOTE} & {\small\em Minerando dados sobre o desempenho de alunos de cursos de educação permanente em modalidade EAD: Um estudo de caso sobre evasão escolar na UNA-SUS} & {\small classificação} & {\small MOODLE} & {\small\em evasão} & {\small WEKA} & {\small 2014}\\
+{\small SBIE} & {\small\em Predição de Alunos com Risco de Evasão: estudo de caso usando mineração de dados} & {\small classificação} & {\small Sis. Acad.} & {\small\em evasão} & {\small WEKA} & {\small 2018}\\
+{\small SBIE} & {\small\em Predição de Zona de Aprendizagem de Alunos de Introdução à Programação em Ambientes de Correção Automática de Código} & {\small classificação} & {\small Exercícios e provas} & {\small\em desempenho} & {\small WEKA} & {\small 2017}\\
+{\small SBIE} & {\small\em Um Modelo para Trilhas de Aprendizagem em um Ambiente Virtual de Aprendizagem} & {\small classificação} & {\small MOODLE} & {\small\em comportamento /desempenho} & {\small WEKA} & {\small 2017}\\
+{\small SBIE} & {\small\em Uso de Séries Temporais e Seleção de Atributos em Mineração de Dados Educacionais para Previsão de Desempenho Acadêmico} & {\small classificação} & {\small MOODLE} & {\small\em desempenho} & {\small WEKA} & {\small 2016}\\
+{\small SBIE} & {\small\em Utilização de técnicas de Mineração de Dados Educacionais para a predição de desempenho de alunos de EaD em Ambientes Virtuais de Aprendizagem} & {\small classificação} & {\small MOODLE} & {\small\em desempenho} & {\small WEKA} & {\small 2017}\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+\end{landscape}
+
+\chapter{Análise e Comparação dos Trabalhos}
+
+
+
+Mineração de Dados é definida como o processo de descoberta de padrões a partir de um conjunto de dados~\cite{wi2011practical}. Além disso, os padrões descobertos precisam revelar alguma novidade e serem potencialmente úteis de forma a trazer algum benefício para o usuário ou tarefa a ser desenvolvida~\cite{fayyad1996kdd}.
+
+Nesta seção será apresentado um resumo geral das respostas obtidas para as questões de pesquisa citas no capítulo anterior. Para tanto, os 14 artigos incluídos neste trabalho foram categorizados, para uma análise mais detalhada dos itens considerados. Essa categorização foi baseada nas quatro questões do trabalho.
+
+\section{Qual tem sido as técnicas utilizadas nos trabalhos na área?}
+
+Na área de predição, a meta é desenvolver modelos que deduzam aspectos específicos dos dados, conhecidos como variáveis preditivas (predicted variables), através da análise e fusão dos diversos aspectos encontrados nos dados, chamados de variáveis preditoras (predictor variables). A Predição necessita que uma certa quantidade dos dados seja manualmente codificada para viabilizar a correta identificação de uma ou mais variáveis predicionada previamente conhecidas (a codificação e a identificação das variáveis não precisam ser perfeitas). Como indicado na taxonomia, existem três tipos de predição: classificação, regressão, e estimação de densidade. A estimação de densidade é raramente utilizada na EDM devido a falta de independência estatística dos dados. Em classificação, a variável predicionada é binária ou categórica. Quando a variável predicionada é um número, os algoritmos de regressão mais populares incluem regressão linear, redes neurais, e máquinas de suporte vetorial. Para classificação e regressão, as variáveis preditoras podem ser categóricas ou numéricas; métodos diferentes ficam mais (ou menos) efetivos, dependendo das características das variáveis preditoras utilizadas~\cite{baker2011mineraccao}.
+
+De acordo com a pesquisa realizada foram encontrados artigos aplicando tanto técnicas de classificação, como técnicas de  regressão.
+
+\textbf{Classificação}: Com 12 dos 14 artigos a técnica de classificação foi a mais pesquisa.
+O algoritmo de aprendizagem de máquina mais utilizado foi arvore de decisão (J48) por apresentar resultados intuitivos e permitir melhor entendimento por parte dos gestores em relação aos valores dos atributos e a situação final de cada aluno. O algoritmo de arvore de decisão apareceu 9 dos 12 trabalhos encontrados.
+
+\textbf{Regressão}: pode ser definida como uma técnica de análise estatística de investigação e modelagem de relacionamento entre variáveis, aplicável à descrição de dados, estimação de parâmetros, predição e estimação e controle de processos~\cite{de2016mineraccao}.
+
+Os dois trabalho encontrados utilizando a técnica de regressão. \cite{da2012minerando} propôs fazer a coleta de logs do Moodle para fazer a predição de utilização do recurso Fórum por alunos de oito semestres letivos de uma unidade educacional de um IES. Acredita que os  resultados obtidos podem servir de base de um estudo para comprar participação de alunos de diferentes unidades educacionais em fóruns de discussões e oportunizar estudos sobre a participação das discussões em fóruns nos resultados finais em cursos mistos.
+ 
+\section{Quais tipo de dados estão sendo considerados pertinentes na área?}
+
+Foram encontrados 10 trabalhos aplicando MDE em bases do MOODLE, onde tiveram pesquisas que utilizaram: Dados de matrículas; Dados de desempenho; Dados de fórum, chat ou diário, entre outras; Dados de log e atributos derivados do log;
+
+Como todos os trabalhos que coletaram dados do MOODLE utilizaram a ferramenta WEKA na fase de tranformação a maior parte dos trabalho convertiam os dados para ARFF ou CSV.
+
+Dois trabalho usaram a base de dados do ENEM por ser uma base de dados pública e de fácil acesso. Essa base é fornecia pelo INEP e apresentam valores médios de proficiência dos alunos agrupados por escolas. É disponibilizado um conjunto de dados para cada área avaliada, sendo elas: ciências da natureza e suas tecnologias; ciências humanas e suas tecnologias; linguagens, códigos e suas tecnologias; matemática e suas tecnologias; e redação~\cite{simon2017mineraccao}.
+
+Um trabalho utilizou a base de dados do sistema acadêmico para compreender a evasão analisando dados de alunos que já cursaram no mínimo um ano do curso de graduação, a partir de dados demográficos e de desempenho acadêmico~\cite{lanes2018prediccao}.
+
+E um artigo coletou os atributos do perfil de alunos para resolver as questões de programação de listas de exercícios e de provas.
+
+\section{Qual é o objetivo de estudo dos trabalhos na área?}
+
+Para esta questão foram identificados 3 categorias: comportamento, desempenho e evasão. A maioria dos trabalhos foram focados em fazer a predição do desempenho do aluno, 9 no total. Seguido pela predição da evasão com 4 trabalhos e por ultimo o comportamento com 3 artigos apenas.
+
+\section{Quais são as ferramentas que tem sido utilizadas na área?}
+
+O Software WEKA foi a ferramenta mais utilizada com 11 dos 14 trabalhos fazendo uso dessa ferramenta. O WEKA é em um projeto de software livre iniciado em 1992 com o objetivo de disponibilizar algoritmos de aprendizado de máquina e ferramentas de processamento de dados para pesquisadores~\cite{hall2009weka}. O WEKA é aceito largamente tanto na área acadêmica quanto na área empresarial e possui uma comunidade de usuários bastante ativa. Sua implementação é realizada em linguagem Java, o que também contribui para sua manutenção e modificação.
+
+
+\chapter{Considerações finais}
+
+Este trabalho, fez um apanhado das técnica de predição em MDE nos últimos 5 anos, de 2014 a 2018, em 5 principais veículos na área de Informática na Educação no Brasil. É possível observar que a maioria dos trabalhos utilizaram dados da educação a distancia (EAD), como o principal objetivo de prever o desempenho do aluno. Estes trabalhos em sua maioria utilizaram técnicas de classificação, utilizando a ferramenta Waikato Environment for Knowledge Analysis (WEKA). Porem, com a grande maioria dos trabalhos tratam do ensino a distância, trabalhos baseado na modalidade presencial deixou uma expectativa por esse tipo de foco.
+A maioria dos trabalhos tem a perspectiva de continuar os projetos, aumentando a quantidade de dados ou filtrando melhor os parâmetros mais necessários. Assim como incentivam a busca de ferramentas, técnicas e metodologias para melhorar a predição.
+Como projetos futuros, pretende-se ampliar este levantamento para além do Brasil, o que permitirá a correlação entre as metodologias, práticas e ferramentas adotadas no Brasil e no exterior.
+
+\bibliography{bibliografia}
+\bibliographystyle{abnt}
+
+\end{document}
+
