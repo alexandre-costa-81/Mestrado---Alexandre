@@ -1,1 +1,2 @@
-# texufpel
+# Mestrado em Computação
+@alexandre.costa
