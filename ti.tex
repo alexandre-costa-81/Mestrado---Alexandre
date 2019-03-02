@@ -14,7 +14,7 @@
 \programa{Programa de Pós-Graduação em Computação}
 \curso{Ciência da Computação}
 
-\title{Um levantamento da principais técnicas de Mineração de Dados Educacionais}
+\title{Estudo e Revisão das Técnicas de Mineração de Dados em Ambientes Educacionais}
 
 \author{Costa}{Alexandre Gomes da}
 \advisor[Prof.~Dr.]{Mattos}{Julio Carlos Balzano de}
@@ -100,12 +100,13 @@ A large amount of data has been produced through several iteration modes in syst
 %lista de abreviaturas e siglas
 \begin{listofabbrv}{SPMD}
         \item[IES] Instituição de Ensino Superiores
+        \item[MD] Mineração de Dados
         \item[MDE] Mineração de Dados Educacionais
         \item[EDM] Educational Data Mining
         \item[LA] Learning Analytics
-        % \item[SIMD] Single Instruction Multiple Data
-        % \item[SPMD] Single Program Multiple Data
-        % \item[ABNT] Associação Brasileira de Normas Técnicas
+        \item[TIC] Tecnologia da Informação e Comunicação
+        \item[IE] Informática na Educação
+        \item[KDD] Knowledge Discovery in Database
 \end{listofabbrv}
 
 %Sumario
@@ -113,110 +114,292 @@ A large amount of data has been produced through several iteration modes in syst
 
 \chapter{Introdução}
 
-A tecnologia vem trazendo mudanças significativas em toda a sociedade e está cada vez mais presente no dia-a-dia, seja na política, economia ou educação. A evolução tecnológica tem oportunizado um maior acesso à informação e com isso trazendo mudanças drásticas na área acadêmica, e o uso das Tecnologias de Informação e Comunicação (TIC) se torna importante nessa mudanças.
+%% TIC
+%% Topic sentence
+O uso das Tecnologias de Informação e Comunicação (TIC) tem se torna cada vez mais constantes no dia-a-dia.
+%% Supporting sentence
+Hoje em dia TIC é utilizado do barzinho, quando a rede \textit{Wi-Fi} pede para o cliente fazer \textit{check-in} com a conta de alguma rede social,
+%% Supporting sentence
+até um grande industria com um complexo sistema de monitoramento ou sistema de gerenciamento de pessoal.
+%% Conclusion
+TIC tem sido e vai ser cada vez mais constante em nossas vidas e junto com ela vem uma grande quantidade de dados gerados.
 
-Atualmente, é crescente a utilização de TIC's. Este fato permite uma maior integração entre as Instituições de Ensino, docentes e discentes, que passaram a utilizar a tecnologia para produzir e gerenciar conteúdos didáticos, elaborar disciplinas presenciais, semipresenciais e cursos totalmente a distância, com o objetivo final de gerar e adquirir conhecimento, tanto em caráter individual como coletivo.
+%% Big Data
+%% Topic sentence
+Com esse grande volume de dados não estruturado sendo gerada não é possível extrair alguma informação útil desses dados.
+%% Supporting sentence
+Um exemplo seria a complexidade de interpretar os logs de uma aeronave que são gerados constantemente enquanto ela esta em funcionamento, analisar esse volume e variedade de informação de forma rápida é inviável.
+%% Conclusion
+Por isso que quando surge o problema de grandes quantidades de dados o termo Big Data surge.
 
-O uso destas tecnologias, como os Ambientes Virtuais de Aprendizagem (AVA), gera um enorme volume de dados, resultantes de interações e de registros de informações de professores, tutores, alunos, gestores e demais atores do sistema educacional. Este enorme volume de dados armazenado está sendo estudado por profissionais da área de Informática na Educação (IE)~\cite{santos2016analise}.
+%% TIC na educação
+%% Topic sentence
+A educação é uma área onde vem aumentando cada vez mais a necessidade de TIC.
+%% Supporting sentence
+Pois com o aumento número de registros de alunos ou a necessidade de RH com professores e funcionários gerenciar essas informações se torna necessário.
+%% Conclusion
+Devido a isso que TIC na educação não é só necessário como obrigatório para um bom funcionamento de instituições de ensino.
 
-Com a grande quantidade de dados educacionais sendo produzidos todos os dias Learning Analytics e Mineração de dados educacionais são duas áreas que tem entrado em evidência. Tendo em vista essa quantidade de dados e o volume de trabalhos sendo produzidos nessas áreas é difícil identificar quais métodos vem sendo utilizados com exito.
+%% Big data na educação
+%% Topic sentence
+O usu de técnologias como Moodle ou Sistemas acadêmicos vem gerando um grande volume de dados.
+%% Supporting sentence
+Esse volume de dados é o resultado de iterações, registros acadêmicos dos professores ou até registros relacionados a funcinários.
+%% Conclusion
+Por esse motivo que áreas como a Mineração de Dados Educaioncais (MDE) e \textit{Learning Analytics} (LA) surgem para tentar resolver esse problema.
 
-Por isso que a ideia deste trabalho é fazer um levantamento de artigos dos últimos 5 anos que objetivam aplicar MDE utilizando técnicas de predição. O trabalho está organizado como segue. A seção 2 detalha a metodologia utilizada na pesquisa realizada. A seção 3 traz uma visão geral dos trabalhos na área de MDE nos últimos 5 anos e a seção 4 será apresentado as considerações finais.
+%% Mineração de dados
+Mineração de Dados (MD) é uma etapas do processo de \textit{Knowledge Discovery in Database} (KDD) que busca efetiva por conhecimento. MD é a etapa principal do processo de KDD tanto que alguns autores referem-se a elas como sinônimos \cite{goldschmidt2015data}.
+
+%% Mineração de dados educacionais
+\citet{baker2010data} define mineração de dados educacionais (MDE) como a área de investigação científica centrada no desenvolvimento de métodos para fazer descobertas dentro dos tipos de dados que vêm de ambientes educacionais e usando esses métodos para entender melhor os alunos e a aprendizagem deles. Esses métodos geralmente são retirados de processo de KDD e adapitados para o contexto educacional.
+
+Fazendo uma busca em algumas bibliotecas digitais da área foram encontrado 263 artigos. A busca foi restringida a buscar apenas trabalhos focados em MDE com foco em predição. Tendo em vista essa quantidade de dados e o volume de trabalhos sendo produzidos nessas áreas é difícil identificar quais métodos vem sendo utilizados com exito. Por isso que a ideia deste trabalho é fazer um levantamento de artigos que objetivam aplicar MDE utilizando técnicas de predição.
+
+O trabalho está organizado como segue. O capítulo 2 apresenta a Revisão Bibliográfica explicando a metodologia e mostrando os trabalhos relacionados. O capítulo 3 faz uma comparação dos trabalhos tentando classificar e a seção 4 será apresentado as considerações finais.
 
 \chapter{Revisão Bibliográfica}
-\subsection{Metodologia}
-O apanhado de trabalhos nas áreas de MDE considerou os artigos publicados nos últimos 5 anos em periódicos e anais, no período de 2014 a 2018. Foram considerados para esta pesquisa alguns dos principais canais das áreas de MDE que retornou algum resultado:
+Este capítulo apresentará um revisão bibliográfica de trabalhos ligados a MDE utilizando técnica de predição.
+
+\section{Metodologia}
+O apanhado de trabalhos nas áreas de MDE considerou os artigos publicados nos últimos 5 anos em periódicos e anais, no período de 2014 a 2018. Foram considerados para esta pesquisa alguns dos principais canais brasileiro e 2 bibliotecas digitais estrangeiras:
 CBIE (Congresso Brasileiro de Informática na Educação);
 RBIE (Revista Brasileira de Informática na Educação);
 RENOTE (Revista Novas Tecnologias na Educação);
-SBIE (Simpósio Brasileiro de Informática na Educação).
-A pesquisa foi realizada nos sites de busca dos veículos, onde foram considerados apenas os trabalhos que focam nas área de MDE utilizando técnicas de predição. Foi utilizado o seguinte termo de busca: $(mde\ \vee\ ``mineração\ de\ dados\ educacionais``\ \vee\ edm\ \vee\ ``educational\ data\ mining``)\ \wedge\ predi*$, trazendo um total de 20 publicações.
-Os trabalhos considerados nesta pesquisa foram sintetizados conforme a Tabela~\ref{relacao-trabalhos}.
+SBIE (Simpósio Brasileiro de Informática na Educação);
+IEEEXPLORE (IEEE Xplore Digital Library);
+ACM (The ACM Digital Library).
+A pesquisa foi realizada nos sites de busca dos veículos, onde foram considerados apenas os trabalhos que focam nas área de MDE utilizando técnicas de predição. Foi utilizado o seguinte termo de busca: $(mde\ \vee\ ``mineração\ de\ dados\ educacionais``\ \vee\ edm\ \vee\ ``educational\ data\ mining``)\ \wedge\ predi*$, trazendo um total de 263 trabalhos destes foram selecionados 25 artigos.
 O estudo realizado foi organizado procurando responder as seguintes questões de pesquisa:
 Q1 – Qual tem sido as técnicas utilizadas nos trabalhos na área?
 Q2 – Qual tipo de dados estão sendo considerados pertinentes na área?
 Q3 – Qual é o objetivo de estudo dos trabalhos na área?
 Q4 – Qual são as ferramentas que tem sido utilizadas na área?
 
-% \subsection{Principais Trabalhos na Literatura}
+\section{Trabalhos Relacionados}
+
+Esta seção apresentará alguns trabalhos relacionados com mineração de dados educacionais mais especificamente a técnicas de predição. Os artigos foram agrupados de acordo com os três objetivos mais encontrados o desempenho acadêmico, o comportamento e a evasão. Será apresentada uma a comparação dos trabalhos encontrados nos principais veículos brasileiros e estrangeiros.
+
+\subsection{Desempenho acadêmico}
+
+%% 2014
+\citet{gottardo2014estimativa} utilizou técnicas de mineração de dados para obter inferências relativas ao desempenho de estudantes em cursos a distância através de dados obtidos de um Ambiente Virtual de Aprendizagem. Foram usados dados de 140 estudantes de duas turmas, já encerradas, de um disciplina da base dados do Moodle. Foram utilizados os seguintes algoritmos: \textit{RandomForest} e \textit{MultilayerPerceptron}. Também foi usado um algoritmo de discretização dos dados em um dos experimentos. Ao todo forma 3 experimentos onde o melhor resultado foi executando o \textit{MultilayerPercpetron} que obteve um taxa de 80,7\% de acurácia. Todos os experimentos foram executados dentro do Weka.
+
+\citet{de2014monitoring} discutem uma abordagem analítica para lidar com dados de \textit{e-learning}. O foco foi identificar grupos de alunos com base em suas respostas. Os objetivos principais do trabalho foram: compreender os perfis de respostas, a fim de orientar o aluno para futuras atividades de aprendizagem, e identificar quais critérios, em cada grupo, são os mais relevantes para a ajuda do tutor. Foram selecionados dados de um curso de \textit{e-learning} em inglês do repositório PSLC para estudo de caso na etapa de validação. Técnicas de pré-processamento de EDM foram aplicadas no conjunto de dados selecionado. Foram removidos dados incompletos, ruidosos e inconsistentes. O pré-processamento foi executado duas etapas: \textit{clustering} e análise de predição. Em primeiro lugar, foi executado o processo de agrupamento, pois foi preciso identificar o grupo de alunos com base em suas respostas. Depois foi preciso prever comportamentos dos alunos em cada \textit{cluster}, que foram definidos na última etapa. Para a previsão foi utilizado uma metodologia de regressão e o \textit{clustering} executou o algoritmo K-means. Foram identificados cinco grupos de alunos com base em sua resposta (Especialistas, Bom, Regular, Ruim e Crítica). A análise de predição definiu que a pontuação da ajuda do tutor (``Avg Assistance Score'') foi o fator mais interessante para a investigação. A abordagem executou a Regressão por Retrocesso Stepwise. Outro resultado foi que a presença das variáveis ``Incorreto'' e ``Corrigir Primeiras Tentativas'' pertence a três modelos de regressão obtidos pela abordagem. Os resultados do trabalho apresentaram conhecimento sobre os perfis de respostas dos alunos do AVA em duas perspectivas principais. Primeiro, analisa o uso de \textit{Open Learning Data} para caracterizar perfis comportamentais de respostas usando técnicas de análise multivariada. Em segundo lugar, a análise contribuiu para ampliar o conhecimento atual sobre como o desempenho do aluno altera as decisões do professor no AVA.
+
+\citet{gottardo2014estimativa} propõem investigar como obter inferências do desempenho de estudantes em cursos a distância utilizando dados gerados pelo Moodle. Para fazer a inferência foi escolhido a "Teoria de Interação em Educação" que separa os conjuntos de atributos em 3 dimensões: Perfil do uso do AVA; Interação estudante-esturante; Iteração bidirecinal estudante-professor. Foram realizados 3 experimentos onde: o primeiro considerou o conjunto completo de atributos sem nenhuma transformção nos dados; o segundo considerou os mesmo atributos do experimento 1, mas transformando esses atributos em valores discretos; o terceiro experimento foi baseado na hipótese de atributos irrelevantes e considerou apenas um conjunto de atributos. Para cada um dos experimentos foram aplicados os algoritmos \textit{RandomForest} e \textit{MultilayerPerceptron}.   Nos experimentos realizados os autores relatam que o algoritmo com melhor desempenho foi o \textit{MultilayerPerceptron} e que em geral conseguiram atingir índices entre 73 a 80\% de acertos em predições de desempenho acadêmico.
+
+\citet{grivokostopoulou2014utilizing} apresentam uma metodologia de mineração de dados para analisar o desempenho dos alunos com o objetivo de prever o desempenho final do curso e rastrear alunos com desempenho insatisfatório ou com margem para reprovar nos exames. Todos os desempenhos dos alunos nos testes realizados durante o semestre, através do sistema educacional, são analisados e técnicas de árvore de decisão são utilizadas para extrair conhecimento e prever o desempenho final de cada aluno. Os algoritmos de \textit{decision tree} utilizados neste trabalho foram o J48 e \textit{SimpleCart} ambos disponiveis no Weka. As regras de previsão de \textit{semantic web rule language} SWRL são extraídas e integradas às ontologias do sistema educacional. As previsões feitas podem ajudar o sistema e o tutor a obter uma visão mais profunda do desempenho de aprendizado dos alunos, estimar o desempenho final de cada aluno nos exames e aconselhá-lo a promover melhorias pedagógicas mais amplas. Além disso, a metodologia pode auxiliar na identificação de alunos que precisam de atenção especial e oferecer recomendações adequadas para corrigir suas lacunas de aprendizado e reduzir as taxas de reprovação dos alunos.
+
+\citet{da2014minerando} buscaram descrever a aplicação da tecnologia de mineração de dados para determinar o perfil do aluno propenso à evasão no que tange a cursos de especialização de educação permanente em saúde. O artigo descreve um estudo de caso com os dados fornecido pela Universidade Federal de Ciências da Saúde de Porto Alegre (UFCSPA). Os dados foram analisados aplicando a tarefa de regras de classificação utilizando a técnica de árvores de decisão. O resultado obtido foi um modelo preditivo com 97,6\% de acerto na classificação do conjunto de treinamento, que contou com 248 instancias.
+
+\citet{manhaes2014wave} apresentam uma nova arquitetura que usa técnicas de EDM para prever e identificar aqueles que estão em risco de abandono. Essa abordagem permite que os gestores acadêmicos monitorem o progresso dos alunos em cada semestre letivo, identificando os que têm dificuldade em cumprir suas exigências acadêmicas. utilizou dados de três cursos de graduação em engenharia de uma das maiores universidades públicas brasileiras. Foram aplicado 5 classificadores \textit{Naïve Bayes} (NB), \textit{Multilayer Perceptron} (MLP), \textit{Support Vector Machine with polynomial kernel} (SVM 1 ), \textit{Support Vector Machine with RBF kernel} (SVM 2 ) e \textit{Decision Table} (DT). Foram realizados no total 3 exeperimentos no curso de Engenharia Civil, Engenharia Mecânica e Engenharia de Produção. As precisões de classificação observadas nos três cursos foram semelhantes para todos os classificadores, acima de 87\%. O Naïve Bayes teve a maior taxa de verdadeiros positivos entre três cursos analisados.
+
+\citet{tamhane2014predicting} relata um estudo em grande escala para identificar estudantes em risco de não atingir níveis aceitáveis de desempenho em uma avaliação estadual e uma avaliação padronizada nacional na 8ª série de um importante distrito escolar dos EUA. Um importante destaque do estudo é a sua escala que fornecem uma base sólida para a pesquisa. O trabalho reuniu dados de 132 escolas e mais de 168.000 estudantes presentes no estudo. Foram utilizados 4 classificadores {Naïve Bayes}, {Decision Table}, {Decision Tree} e \textit{Logistic Regression}. Os resultados mostraram que o risco de desempenho baixo de um aluno pode ser previsto com razoável precisão a partir do 5º ano e essa previsão antecipada permite aos professores tempo suficiente para tomar ações corretivas do caminho de aprendizagem do aluno. Também mostraram comparações entre vários grupos de atributos construindo modelos de previsão individualmente para esses atributos. Por fim mostraram que um bom equilíbrio entre as taxas positivas e falsas positivas pode ser alcançado.
+
+%% 2015
+Em \citet{guarin2015model}, foram desenvolvido dois modelos de mineração de dados para prever a perda de desempenho acadêmico em um dado momento usando dados socio-econômicos e registros acadêmicos dos alunos. Foram coletados 1532 registros de dois cursos de uma universidade colombiana e esses registros cotem tanto dados acadêmicos, como dados socio-econômicos dos estudantes. Foram aplicados o classificador \textit{bayesian} e \textit{decision tree} a base de dados. Os autores mostram que a previsão da perda de status acadêmico é melhorada quando dados acadêmicos são adicionados.
+
+\citet{detoni2015modelagem}, descrevem resultados da aplicação de técnicas de aprendizado de máquina para prever a reprovações de alunos utilizando apenas a contagem de iterações. Os dados forma extraídos de registro de acesso de cada usuário vinculado ao curso do experimento. O trabalho deles utilizou os algoritmos Rede Bayesiana, Rede Neural, C4.5 e Florestas Aleatórias, onde destacaram que Rede Bayesiana obtiveram os melhores resultados. Os experimentos realizados demonstraram a praticabilidade de utilizar o número de iterações dos alunos para fazer predições satisfatoriamente precisas, mas também que adicionar atributos derivados das contagens faz com que as previsões sejam mais precisas quando a quantidade de dados é esparsa. Os autores destacam que a abordagem do trabalho é aplicável a toda situação onde é possível contar iterações de qualquer tipo.
+
+%% 2016
+\citet{devasia2016prediction} propõem um sistema web que faz uso da técnica de EDM \textit{Naivve Bayesian} para extrair informações de alunos de uma universidade do EUA para fazer a predição do desempenho deles. O experimento foi rezado com registros 700 alunos. Os dados relacionados aos estudantes foram coletados de 2013 a 2016. Esses dados eram armazenados em diferentes tabelas e foram agrupados em um único conjunto. O algoritmo utilizado para fazer a classificação do desempenho foi o Naive Bayes. O autor identificou que os fatores como a qualificação da mãe e a renda da família são altamente correlacionados com o desempenho do aluno.
+
+\citet{silva2016mineraccao} apresenta uma abordagem de Mineração de Dados Educacionais orientada por atividades de aprendizagem, tendo como referência a Teoria da Atividade. O objetivo do estudo foi analisar as diferenças nos resultados dessa abordagem em relação a um processo de mineração holístico, no qual os modelos de predição permitem análises apenas no nível de disciplina, sem a observação de detalhes das atividades de aprendizagem. O estudo analisou dados de 122 alunos e coletou 124.449 registros de iterações dos estudantes no LMS. Para obter o modelo foi utilizado a técnica de Regressão Logística. Os resultados da pesquisa apontam vantagens da mineração orientada por atividade, que oferece informações em um contexto de interação significativa, com mais subsídios para monitorar e tratar contradições no processo de aprendizagem.
+
+\citet{santos2016uso}  realizou experimentos em uma base de dados do Ambiente Virtual de Aprendizagem Moodle, utilizando o conceito de Séries Temporais e a técnica Cápsula de Seleção de Atributos. Os dados utilizados foram retirados do curso de graduação em Administração com um total de 248 estudantes. Foram utilizados os algoritmos de classificação \textit{AdaBoost}, \textit{BayesNet}, IBk, J48, \textit{Random Forest}, \textit{JRip}, \textit{Multilayer Perceptron} e SVM. Resultados indicaram uma melhora no desempenho dos classificadores com o uso de Seleção de Atributos, alguns alcançando a marca de 84,7\% de acurácia.
+
+%% 2017
+\citet{zaffar2017performance} tiveram como principal objetivo de pesquisa avaliar o desempenho de diferentes algoritmos de \textit{Feature Selection} (FS) em diferentes algoritmos de classificação usando o banco de dados do \textit{Kaggle}. Este conjunto de dados contou com 500 estudantes com 16 atributos cada. Nesse trabalho foram avaliados 6 algoritmos de FS (\textit{CfsSubsetEval}, \textit{ChiSquaredAttributeEval}, \textit{FilteredAttributeEval}, \textit{GainRatioAttributeEval}, \textit{Principal Components} e \textit{ReliefAttributeEval}) e foram aplicados a base de dados 15 do principais algoritmos de classificação (\textit{BayesNet}(BN), \textit{Naive Bayes}(NB), \textit{NaiveBayesUpdateable}(NBU), MLP, \textit{Simple Logistic}(SL), SMO, \textit{Decision Table}(DT), \textit{Jrip}, \textit{OneR}, \textit{PART}, \textit{DecsionStump}(DS), J48, \textit{Random Forest}(RF), \textit{RandomTree}(RT) e \textit{REPtree}(RepT)). O autor concluiu que não há grandes mudanças no desempenho dos algoritmos de FS, disponíveis na ferramenta WEKA. Também constata que o método \textit{Principal components} mostrou resultados melhors com o algortimos de classificação \textit{Random Forest} e que MLP obteve o melhor desempenho geral dentre os classificadores.
+
+O objetivo de \citet{simon2017mineraccao} foi gerar um modelo preditivo do indicador de desempenho médio em ciências da natureza e suas tecnologias dos alunos de escolas do ensino médio a partir dos dados públicos referentes ao Exame Nacional do Ensino Médio (ENEM) de 2015. A base de dados utilizada neste trabalho foi o resultados do ENEM de 2015 que é disponibilizado pelo INEP. Para a análise dos dados foram selecionados 9 colunas e 15599 registros. Eles utilizaram a técnica de arvore de decisão através do algoritmo J48 disponível na ferramenta WEKA. O algoritmo foi executado \textit{cross-validation} com fold igual a 10. Os autores relatam que o algoritmo foi capaz de identificar corretamente em média 77,02\% das 15599 instancias e que apresentou como variável independente principal para classificação a Tipo Escola.
+
+\citet{amra2017students} propõem aplicar dois algoritmos de classificação para fazer a predição do desempenho acadêmico de estudantes do ensino médio de uma escola, a partir de dados coletados durante o ano de 2015. Selecionou 8 atributos de uma base de dados de 500 registros e 14 atributos. Em relação aos resultados obtidos os autor apontou que Naive Bayes alcançou um resultado melhor que o KNN, porem ele cita um outro estudo que aplicou os mesmo algoritmos em um base de dados similar e o resultado foi diferente o KNN conseguiu uma acurácia de 83,65\% e o Naive Bayes 75,77\%. Por isso a conclusão do trabalho foi de que os algoritmos são extremamente dependentes dos atributos selecionados.
+
+O objetivo de \citet{dwan2017prediccao} foi propor e validar um método para inferir a zona de aprendizagem de alunos de turmas de Introdução à Programação (IPC) em ambientes de correção automática de código (ACAC). Foi construído um perfil de programação baseado nos dados deixados pelos estudantes à medida que eles resolvem exercícios no sistema. Os alunos que tiraram notas inferiores a 5 foram classificados em uma zona de dificuldade, do contrário em uma zona de expertise. Para encontrar os subconjuntos de atributos mais relevantes foi utilizado o algoritmo \textit{BestFirst} e a avaliação desses subconjuntos foi realizada pelo algoritmo \textit{CfsSubsetEval}, ambos na ferramenta Weka.  Para encontrar o melhor hiperparâmetro foi utilizada a técnica \textit{GridSearchCV}. Para construir o modelo preditivo os autores usaram 5 classificadores \textit{Support Vector Machine} (SVM), \textit{Random Forest} (RF), \textit{AdaBoosting} (AB), Árvore de Decisão (AD) e \textit{K-Nearest Neighbours} (KNN). O modelo preditivo construído obteve 78,3\% de acurácia já nas duas primeiras semanas de aula, o que ultrapassa os resultados de pesquisas que foram conduzidas em cenários semelhantes.
+
+\citet{ramos2017modelo} apresentou um novo modelo de trilhas de aprendizagem, baseado em relações de interação aluno-ambiente virtual de aprendizagem, para ser utilizado como modelo de aprendiz. Coletaram dados de turmas já encerradas e construiu a representação do modelo no formato de grafo dirigido, onde os recursos e atividades foram representados como vértices, e a navegação (caminho) do aluno entre os vértices como arestas. Foram realizados 3 experimentos onde um fez predição da reprovação, outro a formação de grupos e o ultimo a análise do comportamento. O primeiro utilizou os classificadores \textit{Naive Bayes}, SVM, KNN (IB1, 1 vizinho), kNN (IB10, 10 vizinhos), e C4.5 (J48) para fazer a predição, onde os algoritmos tiveram mais de 70\% de acertos. O segundo fez o agrupamento utilizando o algoritmo \textit{K-Means}.  No terceiro foi analisado visulmente as turmas dos experimentos. Os resultados dos experimentos mostram que é possível utilizar o modelo proposto para realizar ações como predição de reprovação escolar, formação de grupos e análise de comportamento.
+
+No trabalho de \citet{rabelo2017utilizaccao} foram aplicados técnicas de mineração de dados em um conjunto de dados do Moodle para fazer a predição de sucesso ou insucesso do estudante. Foram selecionadas 8 dentre as 64 ações existentes e após a limpeza dos dados sobraram 514 instâncias de alunos para classificação. Para esta foram utilizados dois algoritmos de classificação baseados em Arvores de Decisão o ID3 e o J48. A acurácia dos algoritmos ficou entre 93,9\% e 96,5\% de precisão se um aluno terá ou não um desempenho satisfatório.
+
+%% 2018
+O objetivo de \citet{alves2018prediccao} foi encontrar padrões e gerar um modelo preditivo do indicador de desempenho das notas da prova de Matemática e suas Tecnologias das escolas do ensino médio, por meio dos dados do ENEM de 2015. Os dados foram divididos em treinamento e teste onde o primeiro ficou com 70\% e o outro 30\%. Para fazer a classificação foram usados dois algoritmos J48 e Naive Bayes. Como resultado os autores destacam que o algoritmo que obteve a melhor acurácia foi o J48 chegando a atigir 71,94\%.
+
+\subsection{Evasão}
+
+%% 2014
+\citet{rigo2014aplicaccoes} apresenta um estudo de fatores envolvidos no fenômeno de evasão escolar e descrevem a utilização de um sistema para MDE e LA durante 18 meses em cursos de graduação na modalidade de Educação a Distância. Ao todo foram executados 4 experimentos onde foram acompanhados 603, 250, 925 e 713 alunos. Para cada estudo de caso que trata o trabalho foi utilizado a técnica \textit{RNA Multilayer Perceptron}. O melhor resultado com relação a predição da evasão foi no experimento 4 onde a melhor mádia de acertos foi de 83,7\%.
+
+%% 2015
+\citet{pradeep2015students} buscam prever a evasão de alunos em \textit{middle or secondary education} de uma escola de renome na India. O conjunto de dados foi composto por 670 registros de alunos com 57 atributos de estudantes registrados entre 2011 e 2013. Foram usadas 3 fontes de dados diferentes uma foi pesquisa com familiares, outra formulários de admissão e a terceira foram as notas dos alunos. No total 57 atributos de 670 registros de estudantes após o pré-processamento da base de dados. O estudo utilizou a ferramenta WEKA: para a seleção de atributos utilizou 7 algoritmos (CfsSubsetEval, ReliefFAttributeEval, ChiSquaredAttributeEval, neRAttributeEval, Consistency-SubsetEval, Filtered AttributeEval, GainRatioAttributeEval) e para a classificação aplicou a técnica de \textit{Decision tree} e \textit{rule induction}. Segundo o autor a qualidade e a confiabilidade das informações disponíveis afetam diretamente os resultados obtidos, por isso é importante reunir as informações corretas. As principais considerações a respeito das técnicas de mineração de dados foram: os algoritmos se mostraram promissores para fazer a predição de evasão; a seleção de atributos contribuem diminuir o número de regras e condições sem perder o desempenho dos classificadores. Com relação ao conhecimento extraído as principais conclusões são: os métodos de \textit{decision tree} e \textit{induciton rule} são facilmente convertidos em regras \textit{IF-THEM}; alguns atributos que contribuem diretamente para a evasão são nostas ruim em matematica, inglês e fisica, e também alunos com idade acima de 15 anos.
+
+%% 2016
+\citet{hasbun2016extracurricular}  discutiram a importância de atividades extracurriculares para prever o abandono escolar de estudantes de dois cursos de Bacharel em Ciências (Engenharia e Negócios). Foram coletados dados de 4840 alunos. Dois modelos foram treinados, uma incluindo todos os dados e outra removendo notas e créditos obrigatórios do valor das atividades. Ambos os modelos foram treinados e validados usando \textit{cross-validation}. Utilizou o pacote \textit{R Studio} para o algoritmo CART. A primeira árvore de decisão obteve a melhor precisão (93,94\%).  Para o segundo modelo obteve uma precisão para previsão de 79,29\%. Os autores relataram que embora a previsão de abandono com dados acumulados mostre um melhor desempenho, o segundo modelo ajuda a resolver o problema de disponibilidade de dados dos alunos. Além disso, a partir da análise dos erros, descobrimos que a árvore de decisão treinada com todos os dados foi eficiente na modelagem das expectativas acadêmicas do programa, ocultando fatores pessoais que são mais relevantes para intervenções de prevenção de abandono. Por isso, os resultados apresentados sugerem que incluir atividades extracurriculares é útil para observar comportamentos específicos que parecem estar relacionados ao fenômeno de desligamento relacionado ao abandono.
+
+%% 2017
+
+%% 2018
+\citet{lanes2018prediccao} apresentaram um estudo que visa identificar estudantes que apresentam risco de evasão a partir do seu primeiro ano no curso de graduação. Os experimentos foram realizados com informações extraídas do sistema acadêmico da FURG. O conjunto de dados contou com 916 registros de 12 cursos de graduação de áreas distintas. Os dados foram discretizados e categorizados para gerar o \textit{dataset} final. Foi utilizado a ferramenta Weka e aplicado o algoritmo J48 para processar o \textit{dataset} e obter a arvore de decisão. Os resultados mostram que os potenciais alunos em risco de evadir podem ser identificados com acurácia de 90,7\% usando o algoritmo J48.
+
+\subsection{Comportamento}
+
+%% 2014
+
+%% 2015
+\citet{santos13evidencia} descreveram uma pesquisa que busca identificar o aluno desanimado em um AVA utilizando mineração de dados. Foram aplicadas duas técnicas de classificação de dados utilizando árvore decisão, uma através do \textit{Holdout} e outra com \textit{Cross-validation}. Os resultados do modelo preditivo mostraram acerto em cerca de 91\% dos dados para o método \textit{Holdout} e 77\% para \textit{cross-validation}. Novos experimentos serão realizados a fim de validar o modelo e desenvolver ações que subsidiem o professor no apoio a esses alunos.
+
+%% 2016
+\citet{de2016mineraccao} coletaram os logs do Moodle e submeteram a técnicas de Aprendizagem de Máquina para a predição de utilização do Fórum por alunos. Foram coletados os logs do semestres 2014/2, 2015/1, 2015/2 e 2016/1. Os autores aplicaram a técnica de regressão linear aos dados coletados do Moodle. Foi identificado que conforme transcorre o curso os recursos de Foruns são cada vez menos utilizados.
 
 % A Tabela XX apresenta um resumo dos principais trabalhos apontando a técnica utilizada, ...
 
-\begin{landscape}
+\section{Comparação dos Trabalhos}
+
+Alguns trabalhos podem aparecer em mais de uma tabela, pois é possível que tenham mais de um foco. Também todas as tabelas dessa seção foram colocadas em ordem cronológica.
+
+A Tabela~\ref{relacao-trabalhos-desempenho} junta todos os trabalhos que tiveram como foco o desempenho acadêmico dos alunos. Entre esses trabalhos a técnica de Arvore de Decisão foi a mais utilizada, pois é uma técnica de fácil conversão para regras que uma boa parte das pessoas conseguem entender. Foi possível identificar ainda a maior parte dos trabalhos foram em cima de dados do ensino a distancia.
+
+% \begin{table}
+% \begin{center}
+% \caption{Relação de trabalhos}\label{relacao-trabalhos}
+% \begin{tabular}{p{1.3cm}p{4cm}p{2cm}p{1.5cm}p{2.5cm}p{2.25cm}}
+% \hline
+% Local & Referência & Técnicas & BD & Objetivo & Ferramenta \\
+% \hline
+% {\small CBIE} & {\small\em \citet{de2016mineraccao}} & {\small regressão} & {\small MOODLE} & {\small\em comportamento} & {\small N/I}\\
+% {\small CBIE} & {\small\em \citet{simon2017mineraccao}} & {\small classificação} & {\small ENEM} & {\small\em desempenho} & {\small WEKA}\\
+% {\small CBIE} & {\small\em \citet{alves2018prediccao}} & {\small classificação} & {\small ENEM} & {\small\em desempenho} & {\small WEKA}\\
+% {\small RBIE} & {\small\em \citet{rigo2014aplicaccoes}} & {\small classificação} & {\small MOODLE} & {\small\em evasão /desempenho} & {\small Software desenvolvido}\\
+% {\small RBIE} & {\small\em \citet{gottardo2014estimativa}} & {\small classificação} & {\small MOODLE} & {\small\em desempenho} & {\small WEKA}\\
+% {\small RBIE} & {\small\em \citet{detoni2015modelagem}} & {\small classificação} & {\small MOODLE} & {\small\em evasão} & {\small WEKA}\\
+% {\small RENOTE} & {\small\em \citet{santos13evidencia}} & {\small classificação} & {\small MOODLE} & {\small\em comportamento} & {\small WEKA}\\
+% {\small RENOTE} & {\small\em \citet{silva2016mineraccao}} & {\small regressão} & {\small MOODLE} & {\small\em desempenho} & {\small N/I}\\
+% {\small RENOTE} & {\small\em \citet{da2014minerando}} & {\small classificação} & {\small MOODLE} & {\small\em evasão} & {\small WEKA}\\
+% {\small SBIE} & {\small\em \citet{lanes2018prediccao}} & {\small classificação} & {\small Sis. Acad.} & {\small\em evasão} & {\small WEKA}\\
+% {\small SBIE} & {\small\em \citet{dwan2017prediccao}} & {\small classificação} & {\small Exercícios e provas} & {\small\em desempenho} & {\small WEKA}\\
+% {\small SBIE} & {\small\em \citet{ramos2017modelo}} & {\small classificação} & {\small MOODLE} & {\small\em comportamento /desempenho} & {\small WEKA}\\
+% {\small SBIE} & {\small\em \citet{santos2016uso}} & {\small classificação} & {\small MOODLE} & {\small\em desempenho} & {\small WEKA}\\
+% {\small SBIE} & {\small\em \citet{rabelo2017utilizaccao}} & {\small classificação} & {\small MOODLE} & {\small\em desempenho} & {\small WEKA}\\
+% \hline
+% \end{tabular}
+% \end{center}
+% \end{table}
+
 \begin{table}
 \begin{center}
-\caption{Relação de trabalhos}\label{relacao-trabalhos}
-\begin{tabular}{p{1.5cm}p{12cm}p{2cm}p{1.5cm}p{2.5cm}p{2.25cm}p{1cm}}
+\caption{Relação de trabalhos com o objetivo de prever o desempenho acadêmico}\label{relacao-trabalhos-desempenho}
+\begin{tabular}{p{1.4cm}|p{7cm}|p{4cm}|p{1.5cm}}
 \hline
-Local & Titulo & Técnicas & BD & Objetivo & Ferrramenta & Ano\\
+Local & Referência & Técnicas & BD \\
 \hline
-{\small CBIE} & {\small\em Mineração de Dados Educacionais Aplicada à Análise Preditiva em Fóruns no Moodle} & {\small regressão} & {\small MOODLE} & {\small\em comportamento} & {\small N/I} & {\small 2016}\\
-{\small CBIE} & {\small\em Mineração de Dados Educacionais nos Resultados do ENEM de 2015} & {\small classificação} & {\small ENEM} & {\small\em desempenho} & {\small WEKA} & {\small 2018}\\
-{\small CBIE} & {\small\em Predição do desempenho de Matemática e Suas Tecnologias do ENEM utilizando técnicas de Mineração De Dados} & {\small classificação} & {\small ENEM} & {\small\em desempenho} & {\small WEKA} & {\small 2017}\\
-{\small RBIE} & {\small\em Aplicações de Mineração de Dados Educacionais e Learning Analytics com foco na evasão escolar: oportunidades e desafios} & {\small classificação} & {\small MOODLE} & {\small\em evasão /desempenho} & {\small Software desenvolvido} & {\small 2014}\\
-{\small RBIE} & {\small\em Estimativa de Desempenho Acadêmico de Estudantes: Análise da Aplicação de Técnicas de Mineração de Dados em Cursos a Distância} & {\small classificação} & {\small MOODLE} & {\small\em desempenho} & {\small WEKA} & {\small 2014}\\
-{\small RBIE} & {\small\em Modelagem e Predição de Reprovação de Acadêmicos de Cursos de Educação a Distância a partir da Contagem de Interações} & {\small classificação} & {\small MOODLE} & {\small\em evasão} & {\small WEKA} & {\small 2015}\\
-{\small RENOTE} & {\small\em Evidência do desânimo de alunos em um ambiente virtual de ensino e aprendizagem: uma proposta a partir da mineração de dados educacionais} & {\small classificação} & {\small MOODLE} & {\small\em comportamento} & {\small WEKA} & {\small 2015}\\
-{\small RENOTE} & {\small\em Mineração de Dados Educacionais Orientada por Atividades de Aprendizagem} & {\small regressão} & {\small MOODLE} & {\small\em desempenho} & {\small N/I} & {\small 2016}\\
-{\small RENOTE} & {\small\em Minerando dados sobre o desempenho de alunos de cursos de educação permanente em modalidade EAD: Um estudo de caso sobre evasão escolar na UNA-SUS} & {\small classificação} & {\small MOODLE} & {\small\em evasão} & {\small WEKA} & {\small 2014}\\
-{\small SBIE} & {\small\em Predição de Alunos com Risco de Evasão: estudo de caso usando mineração de dados} & {\small classificação} & {\small Sis. Acad.} & {\small\em evasão} & {\small WEKA} & {\small 2018}\\
-{\small SBIE} & {\small\em Predição de Zona de Aprendizagem de Alunos de Introdução à Programação em Ambientes de Correção Automática de Código} & {\small classificação} & {\small Exercícios e provas} & {\small\em desempenho} & {\small WEKA} & {\small 2017}\\
-{\small SBIE} & {\small\em Um Modelo para Trilhas de Aprendizagem em um Ambiente Virtual de Aprendizagem} & {\small classificação} & {\small MOODLE} & {\small\em comportamento /desempenho} & {\small WEKA} & {\small 2017}\\
-{\small SBIE} & {\small\em Uso de Séries Temporais e Seleção de Atributos em Mineração de Dados Educacionais para Previsão de Desempenho Acadêmico} & {\small classificação} & {\small MOODLE} & {\small\em desempenho} & {\small WEKA} & {\small 2016}\\
-{\small SBIE} & {\small\em Utilização de técnicas de Mineração de Dados Educacionais para a predição de desempenho de alunos de EaD em Ambientes Virtuais de Aprendizagem} & {\small classificação} & {\small MOODLE} & {\small\em desempenho} & {\small WEKA} & {\small 2017}\\
+{\small RBIE} & {\small\em \citet{gottardo2014estimativa}} & {\small Arvore de decisão; Redes Neurais} & {\small MOODLE} \\
+{\small IEEE} & {\small\em \citet{de2014monitoring}} & {\small Stepwise} & {\small MOODLE} \\
+{\small IEEE} & {\small\em \citet{grivokostopoulou2014utilizing}} & {\small J48 e SimpleCart} & {\small MOODLE} \\
+{\small ACM} & {\small\em \citet{tamhane2014predicting}} & {\small Naïve Bayes, Decision Table, Decision Tree e Logistic Regression} & {\small MOODLE} \\
+{\small IEEE} & {\small\em \citet{guarin2015model}} & {\small Bayesian e Arvore de decisão} & {\small MOODLE} \\
+{\small RENOTE} & {\small\em \citet{silva2016mineraccao}} & {\small Regressão Logística} & {\small MOODLE} \\
+{\small SBIE} & {\small\em \citet{santos2016uso}} & {\small AdaBoost; BayesNet; IBk; Arvore de decisão; JRip; Redes Neurais; SVM} & {\small MOODLE} \\
+{\small IEEE} & {\small\em \citet{devasia2016prediction}} & {\small Naive Bayes} & {\small MOODLE} \\
+{\small CBIE} & {\small\em \citet{simon2017mineraccao}} & {\small Arvore de decisão} & {\small ENEM} \\
+{\small SBIE} & {\small\em \citet{dwan2017prediccao}} & {\small SVM; Random Forest; AdaBoosting; Árvore de Decisão; KNN} & {\small Exercícios e provas} \\
+{\small SBIE} & {\small\em \citet{ramos2017modelo}} & {\small Naive Bayes; SVM; kNN; C4.5; J48} & {\small MOODLE} \\
+{\small SBIE} & {\small\em \citet{rabelo2017utilizaccao}} & {\small Arvore de decisão} & {\small MOODLE} \\
+{\small IEEE} & {\small\em \citet{zaffar2017performance}} & {\small BayesNet, Naive Bayes, NaiveBayesUpdateable, MLP, Simple Logistic, SMO, Decision Table, Jrip, OneR, PART, DecsionStump, J48, Random Forest, RandomTree e REPtree} & {\small MOODLE} \\
+{\small IEEE} & {\small\em \citet{amra2017students}} & {\small k-NN E Naive Bayes} & {\small MOODLE} \\
+{\small CBIE} & {\small\em \citet{alves2018prediccao}} & {\small Arvore de decisão; Naive Bayes} & {\small ENEM} \\
 \hline
 \end{tabular}
 \end{center}
 \end{table}
-\end{landscape}
 
-\chapter{Análise e Comparação dos Trabalhos}
-
+A tabela ~\ref{relacao-trabalhos-comportamento} mostra a relação de trabalhos que fizeram a predição do comportamento de estudantes. Para os problemas de classificação Arvores de Decisão foram utilizadas em todos os trabalho mais uma vez.
 
 
-Mineração de Dados é definida como o processo de descoberta de padrões a partir de um conjunto de dados~\cite{wi2011practical}. Além disso, os padrões descobertos precisam revelar alguma novidade e serem potencialmente úteis de forma a trazer algum benefício para o usuário ou tarefa a ser desenvolvida~\cite{fayyad1996kdd}.
+\begin{table}
+\begin{center}
+\caption{Relação de trabalhos com o objetivo de prever o comportamento de estudantes}\label{relacao-trabalhos-comportamento}
+\begin{tabular}{p{1.4cm}|p{7cm}|p{4cm}|p{1.5cm}}
+\hline
+Local & Referência & Técnicas & BD \\
+\hline
+{\small CBIE} & {\small\em \citet{de2016mineraccao}} & {\small regressão linear} & {\small MOODLE} \\
+{\small RENOTE} & {\small\em \citet{santos13evidencia}} & {\small Arvore de decisão} & {\small ENEM} \\
+{\small SBIE} & {\small\em \citet{ramos2017modelo}} & {\small Naive Bayes; SVM; KNN (IB1, 1 vizinho); kNN (IB10, 10 vizinhos); C4.5; J48} & {\small MOODLE} \\
+{\small IEEE} & {\small\em \citet{grivokostopoulou2014utilizing}} & {\small Regressão Logística} & {\small MOODLE} \\
+{\small ACM} & {\small\em \citet{ahadi2015exploring}} & {\small J48 e SimpleCart} & {\small Exercícios e provas} \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
 
-Nesta seção será apresentado um resumo geral das respostas obtidas para as questões de pesquisa citas no capítulo anterior. Para tanto, os 14 artigos incluídos neste trabalho foram categorizados, para uma análise mais detalhada dos itens considerados. Essa categorização foi baseada nas quatro questões do trabalho.
+A tablea ~\ref{relacao-trabalhos-evasao} apresenta trabalhos que utilizaram técnicas de MDE para fazer a predição da evasão de alunos. Mesmo a técnica de Arvore de Decisão ser prevalente nos trabalho, nem sempre ela foi considera a técnica com melhor acurácia para o problema. Em alguns casos, a Técnica Bayesiana mostrou um maior índice de acurácia. Em relação a base de dados, trabalhos que usaram a base do Moodle foram os mais frequentes.
 
-\section{Qual tem sido as técnicas utilizadas nos trabalhos na área?}
+\begin{table}
+\begin{center}
+\caption{Relação de trabalhos com o objetivo de prever a evasão}\label{relacao-trabalhos-evasao}
+\begin{tabular}{p{1.4cm}|p{7cm}|p{4cm}|p{1.5cm}}
+\hline
+Local & Referência & Técnicas & BD \\
+\hline
+{\small RBIE} & {\small\em \citet{rigo2014aplicaccoes}} & {\small Redes Neurais} & {\small MOODLE} \\
+{\small RENOTE} & {\small\em \citet{da2014minerando}} & {\small Arvore de decisão} & {\small MOODLE} \\
+{\small ACM} & {\small\em \citet{manhaes2014wave}} & {\small Naïve Bayes, Multilayer Perceptron, Support Vector Machine with polynomial kernel, Support Vector Machine with RBF kernel e Decision Table} & {\small Exercícios e provas} \\
+{\small RBIE} & {\small\em \citet{detoni2015modelagem}} & {\small Rede Bayesiana; Rede Neural; C4.5; Floresta Aleatória} & {\small MOODLE} \\
+{\small IEEE} & {\small\em \citet{pradeep2015students}} & {\small Decision tree e Rule Induction} & {\small FONTES DISTINTAS} \\
+{\small ACM} & {\small\em \citet{hasbun2016extracurricular}} & {\small CART} & {\small Exercícios e provas} \\
+{\small SBIE} & {\small\em \citet{lanes2018prediccao}} & {\small Arvore de decisão} & {\small Sis. Acad.} \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
 
-Na área de predição, a meta é desenvolver modelos que deduzam aspectos específicos dos dados, conhecidos como variáveis preditivas (predicted variables), através da análise e fusão dos diversos aspectos encontrados nos dados, chamados de variáveis preditoras (predictor variables). A Predição necessita que uma certa quantidade dos dados seja manualmente codificada para viabilizar a correta identificação de uma ou mais variáveis predicionada previamente conhecidas (a codificação e a identificação das variáveis não precisam ser perfeitas). Como indicado na taxonomia, existem três tipos de predição: classificação, regressão, e estimação de densidade. A estimação de densidade é raramente utilizada na EDM devido a falta de independência estatística dos dados. Em classificação, a variável predicionada é binária ou categórica. Quando a variável predicionada é um número, os algoritmos de regressão mais populares incluem regressão linear, redes neurais, e máquinas de suporte vetorial. Para classificação e regressão, as variáveis preditoras podem ser categóricas ou numéricas; métodos diferentes ficam mais (ou menos) efetivos, dependendo das características das variáveis preditoras utilizadas~\cite{baker2011mineraccao}.
+A maioria dos trabalhos tratavam de classificação, por isso maioria dos trabalhos fizeram uma análise dos dados utilizando algoritmos de aprendizagem de máquina. Ainda, algumas trabalhos observaram padrões de comportamento. Também foram encontradas técnicas utilizando regressão linear. Na maioria a ferramenta Weka foi utilizada para fazer a mineração dos dados. Mas também, foram encontrados trabalhos usando \textit{scikit-learn}, RapidMiner, entre outros.
 
-De acordo com a pesquisa realizada foram encontrados artigos aplicando tanto técnicas de classificação, como técnicas de  regressão.
+Como falado anteriormente, a maioria dos trabalhos analisaram o desempenho de estudantes. É valido destacar que alguns trabalhos fizeram a predição da reprovação e outros da aprovação, mas o foco era o desempenho do aluno. Além desses, a evasão de alunos também foi tema de estudo tanto em trabalhos com o Moodle, quanto em trabalhos com sistemas acadêmicos ou fonte diversas. Ainda foram encontrados trabalhos que tentaram agrupar estudante de acordo com o comportamento.
 
-\textbf{Classificação}: Com 12 dos 14 artigos a técnica de classificação foi a mais pesquisa.
-O algoritmo de aprendizagem de máquina mais utilizado foi arvore de decisão (J48) por apresentar resultados intuitivos e permitir melhor entendimento por parte dos gestores em relação aos valores dos atributos e a situação final de cada aluno. O algoritmo de arvore de decisão apareceu 9 dos 12 trabalhos encontrados.
-
-\textbf{Regressão}: pode ser definida como uma técnica de análise estatística de investigação e modelagem de relacionamento entre variáveis, aplicável à descrição de dados, estimação de parâmetros, predição e estimação e controle de processos~\cite{de2016mineraccao}.
-
-Os dois trabalho encontrados utilizando a técnica de regressão. \cite{da2012minerando} propôs fazer a coleta de logs do Moodle para fazer a predição de utilização do recurso Fórum por alunos de oito semestres letivos de uma unidade educacional de um IES. Acredita que os  resultados obtidos podem servir de base de um estudo para comprar participação de alunos de diferentes unidades educacionais em fóruns de discussões e oportunizar estudos sobre a participação das discussões em fóruns nos resultados finais em cursos mistos.
- 
-\section{Quais tipo de dados estão sendo considerados pertinentes na área?}
-
-Foram encontrados 10 trabalhos aplicando MDE em bases do MOODLE, onde tiveram pesquisas que utilizaram: Dados de matrículas; Dados de desempenho; Dados de fórum, chat ou diário, entre outras; Dados de log e atributos derivados do log;
-
-Como todos os trabalhos que coletaram dados do MOODLE utilizaram a ferramenta WEKA na fase de tranformação a maior parte dos trabalho convertiam os dados para ARFF ou CSV.
-
-Dois trabalho usaram a base de dados do ENEM por ser uma base de dados pública e de fácil acesso. Essa base é fornecia pelo INEP e apresentam valores médios de proficiência dos alunos agrupados por escolas. É disponibilizado um conjunto de dados para cada área avaliada, sendo elas: ciências da natureza e suas tecnologias; ciências humanas e suas tecnologias; linguagens, códigos e suas tecnologias; matemática e suas tecnologias; e redação~\cite{simon2017mineraccao}.
-
-Um trabalho utilizou a base de dados do sistema acadêmico para compreender a evasão analisando dados de alunos que já cursaram no mínimo um ano do curso de graduação, a partir de dados demográficos e de desempenho acadêmico~\cite{lanes2018prediccao}.
-
-E um artigo coletou os atributos do perfil de alunos para resolver as questões de programação de listas de exercícios e de provas.
-
-\section{Qual é o objetivo de estudo dos trabalhos na área?}
-
-Para esta questão foram identificados 3 categorias: comportamento, desempenho e evasão. A maioria dos trabalhos foram focados em fazer a predição do desempenho do aluno, 9 no total. Seguido pela predição da evasão com 4 trabalhos e por ultimo o comportamento com 3 artigos apenas.
-
-\section{Quais são as ferramentas que tem sido utilizadas na área?}
-
-O Software WEKA foi a ferramenta mais utilizada com 11 dos 14 trabalhos fazendo uso dessa ferramenta. O WEKA é em um projeto de software livre iniciado em 1992 com o objetivo de disponibilizar algoritmos de aprendizado de máquina e ferramentas de processamento de dados para pesquisadores~\cite{hall2009weka}. O WEKA é aceito largamente tanto na área acadêmica quanto na área empresarial e possui uma comunidade de usuários bastante ativa. Sua implementação é realizada em linguagem Java, o que também contribui para sua manutenção e modificação.
-
+Em geral análises fazendo a contagem do número de interações foram bem prevalecente nos trabalhos encontrados. Foram encontrados trabalhos que analisavam dados como o sexo, a idade, o desempenho tanto avaliações, como também disciplinas, grau de escolaridade dos parentes. Algumas trabalhos brasileiros analisaram os dados do ENEM. Também foram encontrado trabalhos que fizeram a predição do comportamento, evasão ou desempenho através de fórum, chat ou diário, entre outras.
 
 \chapter{Considerações finais}
 
-Este trabalho, fez um apanhado das técnica de predição em MDE nos últimos 5 anos, de 2014 a 2018, em 5 principais veículos na área de Informática na Educação no Brasil. É possível observar que a maioria dos trabalhos utilizaram dados da educação a distancia (EAD), como o principal objetivo de prever o desempenho do aluno. Estes trabalhos em sua maioria utilizaram técnicas de classificação, utilizando a ferramenta Waikato Environment for Knowledge Analysis (WEKA). Porem, com a grande maioria dos trabalhos tratam do ensino a distância, trabalhos baseado na modalidade presencial deixou uma expectativa por esse tipo de foco.
+Este trabalho, fez um apanhado na área de MDE focado em técnica de predição nos últimos 5 anos, de 2014 a 2018, nos principais veículos na área de Informática na Educação. Foram predominantes trabalhos utilizando dados da educação a distancia (EAD), como o principal objetivo de prever o desempenho do aluno. Estes trabalhos em sua maioria utilizaram técnicas de classificação, utilizando a ferramenta WEKA. Porem, com a grande maioria dos trabalhos tratam do ensino a distância, trabalhos baseado na modalidade presencial deixou uma expectativa por esse tipo de trabalho.
 A maioria dos trabalhos tem a perspectiva de continuar os projetos, aumentando a quantidade de dados ou filtrando melhor os parâmetros mais necessários. Assim como incentivam a busca de ferramentas, técnicas e metodologias para melhorar a predição.
-Como projetos futuros, pretende-se ampliar este levantamento para além do Brasil, o que permitirá a correlação entre as metodologias, práticas e ferramentas adotadas no Brasil e no exterior.
+Como projetos futuros, pretende-se ampliar este levantamento para incluir mais artigos, o que permitirá a correlação entre as metodologias, práticas e ferramentas adotadas. Pois essa pesquisa se limitou aos trabalhos que foram selecionados, e assim deixando uma gama enorme de trabalho de fora.
+
+
+
+% Qual tem sido as técnicas utilizadas nos trabalhos na área?}
+
+% Na área de predição, a meta é desenvolver modelos que deduzam aspectos específicos dos dados, conhecidos como variáveis preditivas (predicted variables), através da análise e fusão dos diversos aspectos encontrados nos dados, chamados de variáveis preditoras (predictor variables). A Predição necessita que uma certa quantidade dos dados seja manualmente codificada para viabilizar a correta identificação de uma ou mais variáveis predicionada previamente conhecidas (a codificação e a identificação das variáveis não precisam ser perfeitas). Como indicado na taxonomia, existem três tipos de predição: classificação, regressão, e estimação de densidade. A estimação de densidade é raramente utilizada na EDM devido a falta de independência estatística dos dados. Em classificação, a variável predicionada é binária ou categórica. Quando a variável predicionada é um número, os algoritmos de regressão mais populares incluem regressão linear, redes neurais, e máquinas de suporte vetorial. Para classificação e regressão, as variáveis preditoras podem ser categóricas ou numéricas; métodos diferentes ficam mais (ou menos) efetivos, dependendo das características das variáveis preditoras utilizadas~\cite{baker2011mineraccao}.
+
+% De acordo com a pesquisa realizada foram encontrados artigos aplicando tanto técnicas de classificação, como técnicas de  regressão.
+
+% \textbf{Classificação}: Com 12 dos 14 artigos a técnica de classificação foi a mais pesquisa.
+% O algoritmo de aprendizagem de máquina mais utilizado foi arvore de decisão (J48) por apresentar resultados intuitivos e permitir melhor entendimento por parte dos gestores em relação aos valores dos atributos e a situação final de cada aluno. O algoritmo de arvore de decisão apareceu 9 dos 12 trabalhos encontrados.
+
+% \textbf{Regressão}: pode ser definida como uma técnica de análise estatística de investigação e modelagem de relacionamento entre variáveis, aplicável à descrição de dados, estimação de parâmetros, predição e estimação e controle de processos~\cite{de2016mineraccao}.
+
+% Os dois trabalho encontrados utilizando a técnica de regressão. \cite{da2012minerando} propôs fazer a coleta de logs do Moodle para fazer a predição de utilização do recurso Fórum por alunos de oito semestres letivos de uma unidade educacional de um IES. Acredita que os  resultados obtidos podem servir de base de um estudo para comprar participação de alunos de diferentes unidades educacionais em fóruns de discussões e oportunizar estudos sobre a participação das discussões em fóruns nos resultados finais em cursos mistos.
+ 
+% \section{Quais tipo de dados estão sendo considerados pertinentes na área?}
+
+% Foram encontrados 10 trabalhos aplicando MDE em bases do MOODLE, onde tiveram pesquisas que utilizaram: Dados de matrículas; Dados de desempenho; Dados de fórum, chat ou diário, entre outras; Dados de log e atributos derivados do log;
+
+% Como todos os trabalhos que coletaram dados do MOODLE utilizaram a ferramenta WEKA na fase de tranformação a maior parte dos trabalho convertiam os dados para ARFF ou CSV.
+
+% Dois trabalho usaram a base de dados do ENEM por ser uma base de dados pública e de fácil acesso. Essa base é fornecia pelo INEP e apresentam valores médios de proficiência dos alunos agrupados por escolas. É disponibilizado um conjunto de dados para cada área avaliada, sendo elas: ciências da natureza e suas tecnologias; ciências humanas e suas tecnologias; linguagens, códigos e suas tecnologias; matemática e suas tecnologias; e redação~\cite{simon2017mineraccao}.
+
+% Um trabalho utilizou a base de dados do sistema acadêmico para compreender a evasão analisando dados de alunos que já cursaram no mínimo um ano do curso de graduação, a partir de dados demográficos e de desempenho acadêmico~\cite{lanes2018prediccao}.
+
+% E um artigo coletou os atributos do perfil de alunos para resolver as questões de programação de listas de exercícios e de provas.
+
+% \section{Qual é o objetivo de estudo dos trabalhos na área?}
+
+% Para esta questão foram identificados 3 categorias: comportamento, desempenho e evasão. A maioria dos trabalhos foram focados em fazer a predição do desempenho do aluno, 9 no total. Seguido pela predição da evasão com 4 trabalhos e por ultimo o comportamento com 3 artigos apenas.
+
+% \section{Quais são as ferramentas que tem sido utilizadas na área?}
+
+% O Software WEKA foi a ferramenta mais utilizada com 11 dos 14 trabalhos fazendo uso dessa ferramenta. O WEKA é em um projeto de software livre iniciado em 1992 com o objetivo de disponibilizar algoritmos de aprendizado de máquina e ferramentas de processamento de dados para pesquisadores~\cite{hall2009weka}. O WEKA é aceito largamente tanto na área acadêmica quanto na área empresarial e possui uma comunidade de usuários bastante ativa. Sua implementação é realizada em linguagem Java, o que também contribui para sua manutenção e modificação.
+
 
 \bibliography{bibliografia}
 \bibliographystyle{abnt}

@@ -1,0 +1,153 @@
+\documentclass[diss-proposta,nocipinfo]{texufpel}
+%nocipinfo para não aparecer os dados da CIP no Resumo
+
+\usepackage[utf8]{inputenc} % acentuacao
+\usepackage{graphicx} % para inserir figuras
+\usepackage[T1]{fontenc}
+
+\hypersetup{
+    hidelinks, % Remove coloração e caixas
+    unicode=true,   %Permite acentuação no bookmark
+    linktoc=all %Habilita link no nome e página do sumário
+}
+
+\unidade{Centro de Desenvolvimento Tecnológico}
+\programa{Programa de Pós-Graduação em Computação}
+\curso{Ciência da Computação}
+
+\title{Estudo e Revisão das Técnicas de Mineração de Dados em Ambientes Educacionais}
+
+\author{Costa}{Alexandre Gomes da}
+\advisor[Prof.~Dr.]{Mattos}{Julio Carlos Balzano de}
+
+%Palavras-chave em PT_BR
+\keyword{mineração de dados educacionais}
+\keyword{learning analytics}
+\keyword{técnicas de predição}
+
+%Palavras-chave em EN_US
+\keywordeng{educational data mining}
+\keywordeng{learning analytics}
+\keywordeng{prediction techniques}
+
+\begin{document}
+
+\maketitle 
+\sloppy
+
+%Resumo em Portugues (no maximo 1 pagina)
+\begin{abstract}
+Uma grande quantidade de dados vem sendo produzida através de diversas modalidade de iteração em sistemas envolvendo alunos e professores. Contudo, grande parte desses dados não sofre qualquer tipos de analise. Nos últimos anos uma gama cada vez maior de trabalhos vem surgindo na área de Mineração de Dados Educacionais (MDE). Devido a essa grande quantidade de trabalhos é que se faz necessário fazer um levantamento para descobrir quais métodos, técnicas e algoritmos vem sendo utilizado, e ainda quais tipos de problemas vem sendo apurados. A pesquisa foi realizada, procurando responder as seguintes questões: Qual tem sido as técnicas utilizadas nos trabalhos na área. Qual tipo de dados estão sendo considerados pertinentes na área. Qual é o objetivo de estudo dos trabalhos na área. Qual são as ferramentas que tem sido utilizadas na área. O objetivo deste trabalho é fazer uma busca nas principais meios de publicações brasileiros que vem pesquisando MDE utilizando técnicas de predição.
+\end{abstract}
+
+\chapter{Motivação}
+% (ENTRE 1 e 2 PÁGINAS)
+
+% Nesta seção, apresenta-se um breve histórico da área de concentração
+% da Dissertação, partindo do tema mais abrangente até chegar
+% especificamente no assunto do Projeto. Além disso, apresenta-se a
+% justificativa para a realização do trabalho, sua importância acadêmica
+% ou para comunidade e grau de inovação. Poderá também apresentar as
+% distinções entre o trabalho atual e outros trabalhos já realizados.
+%% TIC
+%% Topic sentence
+Aparentemente a Tecnologia da Informação e Comunicação (TIC) vem provocando mudanças significativas na forma de pensar e agir, que acabarão refletindo na organização política, econômica e cultural da sociedade.
+% O uso das Tecnologias de Informação e Comunicação (TIC) tem se tornado cada vez mais comum no cotidiano.
+%% Supporting sentence
+Tecnologias como a internet, redes sociais, ambientes virtuais de aprendizagem, dispositivo móveis, aplicativos embarcados, leitores de código de barras, sensores, leitores biométricos e sistemas de informação em geral são alguns exemplos de recursos que vem aumentando o numero de dados das mais diversas naturezas. (REFERÊNCIA LIVRO DE KDD)
+% Hoje em dia TIC é utilizado do barzinho, quando a rede \textit{Wi-Fi} pede para o cliente fazer \textit{check-in} com a conta de alguma rede social,
+% %% Supporting sentence
+% até um grande industria com um complexo sistema de monitoramento ou sistema de gerenciamento de pessoal.
+% %% Conclusion
+% TIC tem sido e vai ser cada vez mais constante em nossas vidas e junto com ela vem uma grande quantidade de dados gerados.
+
+%% Big Data
+%% Topic sentence
+Com esse grande volume de dados não estruturado sendo gerada não é possível extrair alguma informação útil desses dados.
+%% Supporting sentence
+Um exemplo seria a complexidade de interpretar os logs de uma aeronave que são gerados constantemente enquanto ela esta em funcionamento, analisar esse volume e variedade de informação de forma rápida é inviável.
+%% Conclusion
+Por isso que quando surge o problema de grandes quantidades de dados o termo Big Data surge.
+
+%% TIC na educação
+%% Topic sentence
+A educação é uma área onde vem aumentando cada vez mais a necessidade de TIC.
+%% Supporting sentence
+Pois com o aumento número de registros de alunos ou a necessidade de RH com professores e funcionários gerenciar essas informações se torna necessário.
+%% Conclusion
+Devido a isso que TIC na educação não é só necessário como obrigatório para um bom funcionamento de instituições de ensino.
+
+%% Big data na educação
+%% Topic sentence
+O usu de técnologias como Moodle ou Sistemas acadêmicos vem gerando um grande volume de dados.
+%% Supporting sentence
+Esse volume de dados é o resultado de iterações, registros acadêmicos dos professores ou até registros relacionados a funcinários.
+%% Conclusion
+Por esse motivo que áreas como a Mineração de Dados Educaioncais (MDE) e \textit{Learning Analytics} (LA) surgem para tentar resolver esse problema.
+
+%% Mineração de dados
+Mineração de Dados (MD) é uma etapas do processo de \textit{Knowledge Discovery in Database} (KDD) que busca efetiva por conhecimento. MD é a etapa principal do processo de KDD tanto que alguns autores referem-se a elas como sinônimos \cite{goldschmidt2015data}.
+
+%% Mineração de dados educacionais
+\citet{baker2010data} define mineração de dados educacionais (MDE) como a área de investigação científica centrada no desenvolvimento de métodos para fazer descobertas dentro dos tipos de dados que vêm de ambientes educacionais e usando esses métodos para entender melhor os alunos e a aprendizagem deles. Esses métodos geralmente são retirados de processo de KDD e adapitados para o contexto educacional.
+
+Fazendo uma busca em algumas bibliotecas digitais da área foram encontrado 263 artigos. A busca foi restringida a buscar apenas trabalhos focados em MDE com foco em predição. Tendo em vista essa quantidade de dados e o volume de trabalhos sendo produzidos nessas áreas é difícil identificar quais métodos vem sendo utilizados com exito. Por isso que a ideia deste trabalho é fazer um levantamento de artigos que objetivam aplicar MDE utilizando técnicas de predição.
+
+O trabalho está organizado como segue. O capítulo 2 apresenta a Revisão Bibliográfica explicando a metodologia e mostrando os trabalhos relacionados. O capítulo 3 faz uma comparação dos trabalhos tentando classificar e a seção 4 será apresentado as considerações finais.
+
+\chapter{Objetivos e Resultados}
+% (ENTRE 1 e 3 PÁGINAS)
+
+Nesta seção, apresentam-se o objetivo Geral e os objetivos Específicos
+da dissertação. Os objetivos não devem ser confundidos com as
+atividades. Para a definição das atividades, deve-se partir dos
+objetivos determinados nesta seção. O objetivo Geral do Projeto
+necessariamente deve ser algum resultado prático (implementação) ou
+teórico (modelos formais ou especificações ou validações) produto da
+pesquisa realizada no período do Projeto. Assim como os objetivos
+específicos, que são considerados como sub-produtos do Objetivo
+Geral. Além disso, deve-se apresentar os principais resultados
+esperados do desenvolvimento desta dissertação.
+
+\chapter{Metodologia}
+% (ENTRE 1 e 3 PÁGINAS)
+
+Nesta seção, apresenta-se a metodologia proposta para o
+desenvolvimento da Dissertação. O proponente deve descrever as
+atividades necessárias para a conclusão dos objetivos propostos. 
+
+\chapter{Cronograma}
+
+Esta seção deve apresentar relação numerada de atividades (de estudo,
+modelagem, especificação, implementação ou validação) que deverão ser
+realizadas (incluindo atividades obrigatórias como seminário de
+andamento, entrega e apresentação da dissertação) e o cronograma
+destas atividades, distribuídas no prazo de 12
+meses~\cite{vonNeumann:1966:TSR}.
+
+\bibliography{bibliografia}
+\bibliographystyle{abnt}
+
+\chapter{Assinaturas}
+\vspace{2cm}
+
+\begin{center}
+\rule{8cm}{.3mm}
+\medskip
+
+	Nome do Aluno\\
+	Proponente
+
+\end{center}
+
+\vspace{4cm}
+
+\begin{center}
+\rule{8cm}{.3mm}
+\medskip
+
+	Nome do Professor\\
+	Prof. Orientador
+
+\end{center}
+\end{document}
