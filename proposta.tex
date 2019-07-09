@@ -49,72 +49,95 @@ Uma grande quantidade de dados vem sendo produzida através de diversas modalida
 % justificativa para a realização do trabalho, sua importância acadêmica
 % ou para comunidade e grau de inovação. Poderá também apresentar as
 % distinções entre o trabalho atual e outros trabalhos já realizados.
-%% TIC
-%% Topic sentence
-Aparentemente a Tecnologia da Informação e Comunicação (TIC) vem provocando mudanças significativas na forma de pensar e agir, que acabarão refletindo na organização política, econômica e cultural da sociedade.
-% O uso das Tecnologias de Informação e Comunicação (TIC) tem se tornado cada vez mais comum no cotidiano.
-%% Supporting sentence
-Tecnologias como a internet, redes sociais, ambientes virtuais de aprendizagem, dispositivo móveis, aplicativos embarcados, leitores de código de barras, sensores, leitores biométricos e sistemas de informação em geral são alguns exemplos de recursos que vem aumentando o numero de dados das mais diversas naturezas. (REFERÊNCIA LIVRO DE KDD)
-% Hoje em dia TIC é utilizado do barzinho, quando a rede \textit{Wi-Fi} pede para o cliente fazer \textit{check-in} com a conta de alguma rede social,
-% %% Supporting sentence
-% até um grande industria com um complexo sistema de monitoramento ou sistema de gerenciamento de pessoal.
-% %% Conclusion
-% TIC tem sido e vai ser cada vez mais constante em nossas vidas e junto com ela vem uma grande quantidade de dados gerados.
 
-%% Big Data
-%% Topic sentence
-Com esse grande volume de dados não estruturado sendo gerada não é possível extrair alguma informação útil desses dados.
-%% Supporting sentence
-Um exemplo seria a complexidade de interpretar os logs de uma aeronave que são gerados constantemente enquanto ela esta em funcionamento, analisar esse volume e variedade de informação de forma rápida é inviável.
-%% Conclusion
-Por isso que quando surge o problema de grandes quantidades de dados o termo Big Data surge.
+O uso constante de Tecnologia da Informação e Comunicação em diversas áreas vem gerando um grande volume de dados.
+Tecnologias como a internet, redes sociais, ambientes virtuais de aprendizagem, dispositivo móveis, aplicativos embarcados, leitores de código de barras, sensores, leitores biométricos e sistemas de informação em geral são alguns exemplos de recursos que vem aumentando o numero de dados das mais diversas naturezas \cite{goldschmidt2015data}.
 
-%% TIC na educação
-%% Topic sentence
-A educação é uma área onde vem aumentando cada vez mais a necessidade de TIC.
-%% Supporting sentence
-Pois com o aumento número de registros de alunos ou a necessidade de RH com professores e funcionários gerenciar essas informações se torna necessário.
-%% Conclusion
-Devido a isso que TIC na educação não é só necessário como obrigatório para um bom funcionamento de instituições de ensino.
+%% Educação
+Atualmente, áreas como a educação produzem dados relacionados a alunos e professores todos os dias.
+Necessidades da educação como sistemas para fazer o controle de iterações acadêmicas, gestão de projetos de pesquisa, ensino ou extensão, ou até mesmo sistemas para fazer o controle de gestão de pessoas são alguns do exemplos de sistemas que podem gerar um volume considerável de dados com frequência.
 
-%% Big data na educação
-%% Topic sentence
-O usu de técnologias como Moodle ou Sistemas acadêmicos vem gerando um grande volume de dados.
-%% Supporting sentence
-Esse volume de dados é o resultado de iterações, registros acadêmicos dos professores ou até registros relacionados a funcinários.
-%% Conclusion
-Por esse motivo que áreas como a Mineração de Dados Educaioncais (MDE) e \textit{Learning Analytics} (LA) surgem para tentar resolver esse problema.
-
-%% Mineração de dados
-Mineração de Dados (MD) é uma etapas do processo de \textit{Knowledge Discovery in Database} (KDD) que busca efetiva por conhecimento. MD é a etapa principal do processo de KDD tanto que alguns autores referem-se a elas como sinônimos \cite{goldschmidt2015data}.
+%% Knowledge Discovery in Database - KDD
+Embora com ajuda de ferramentas computacionais, analisar essa crescente quantidade de dados não é trabalho para o homem \cite{goldschmidt2015data}. Para ajudar nesta questão a área de Descoberta de Conhecimento em Base de Dados (\textit{Knowledge Discovery in Database} - KDD) é focada em extrair conhecimento encima de granes volumes de dados. O termo mais conhecido relacionado a essa área é a Mineração de Dados (MD) que é uma das etapas do processo de KDD.
 
 %% Mineração de dados educacionais
-\citet{baker2010data} define mineração de dados educacionais (MDE) como a área de investigação científica centrada no desenvolvimento de métodos para fazer descobertas dentro dos tipos de dados que vêm de ambientes educacionais e usando esses métodos para entender melhor os alunos e a aprendizagem deles. Esses métodos geralmente são retirados de processo de KDD e adapitados para o contexto educacional.
+Segundo \citet{Koedinger2008} Mineração de Dados (MD) aplicada à educação é um campo interdisciplinar emergente mais conhecido como Mineração de Dados Educacionais (MDE).
+\citet{baker2010data} define MDE como a área de investigação científica centrada no desenvolvimento de métodos para fazer descobertas dentro dos tipos de dados que vêm de ambientes educacionais e usando esses métodos para entender melhor os alunos e a aprendizagem deles. A Figura \ref{areas-relacionadas-mde} mostra que a área de MDE pode ser a combinação de 3 grandes áreas (ciência da computação, estatistia e educação) e serve de exemplo para justificar a interdisciplinaridade da área.
 
-Fazendo uma busca em algumas bibliotecas digitais da área foram encontrado 263 artigos. A busca foi restringida a buscar apenas trabalhos focados em MDE com foco em predição. Tendo em vista essa quantidade de dados e o volume de trabalhos sendo produzidos nessas áreas é difícil identificar quais métodos vem sendo utilizados com exito. Por isso que a ideia deste trabalho é fazer um levantamento de artigos que objetivam aplicar MDE utilizando técnicas de predição.
+\begin{figure}[htbp]
+  \centering \includegraphics[scale=.4]{imagens/areas-edm.pdf}
+  \caption{Principais áreas relacionadas com mineração de dados educacionais. \cite{Koedinger2008}}
+  \label{areas-relacionadas-mde}
+\end{figure}
 
-O trabalho está organizado como segue. O capítulo 2 apresenta a Revisão Bibliográfica explicando a metodologia e mostrando os trabalhos relacionados. O capítulo 3 faz uma comparação dos trabalhos tentando classificar e a seção 4 será apresentado as considerações finais.
+
+%% Predição
+Neste trabalho será aplicado um tarefa de classificação para tentar resolver o problema de evasão escolar. 
+Segundo \citet{goldschmidt2015data} uma tarefa de classificação possui dois grupos. Um grupo contem normalmente um atributo apenas que vai servir para fazer a predição de um valor (atributo-alvo). Outro grupo corresponde aos atributos que vão servir para fazer a predição do valor (atributos de predição).
+Tarefas de classificação são largamente utilizadas para fazer a predição de alunos em risco de evasão escolar, como será apresentado mais afrente.
+
+\citet{baker2010data} agrupa o problema de evasão em uma categoria ou tarefa de detectar o comportamento do aluno.
+Onde o objetivo é detectar os alunos que têm algum tipo de problema ou comportamento incomum, por exemplo: ações erradas, pouca motivação, trapaça, evasão escolar, etc.
+Destaca também que as principais técnicas usadas para resolver esses tipos de problemas são de classificação e agrupamentos.
+
+%% Justificativa
+Este trabalho busca usar a base de dados do Cobalto que é o Sistema Integrado de Gestão da UFPEL. A base do Cobalto conta também com os dados históricos do GOL que foi o sistema acadêmico da UFPEL de 2006 à 2013. %% CONTINUAR
+
+A grande vantagem deste estudo está na naturalidade dos dados. Quanto alguns trabalhos fazem questionários, provas, exercícios, etc, no presente trabalho serão coletado dados que foram gerados a partir de resultado que os alunos obtiveram em diversas disciplinas e cursos.
+
+%% Importância acadêmica
+
+
+%% Distinções entre o trabalho atual e os trabalhos já realizados
 
 \chapter{Objetivos e Resultados}
 % (ENTRE 1 e 3 PÁGINAS)
 
-Nesta seção, apresentam-se o objetivo Geral e os objetivos Específicos
-da dissertação. Os objetivos não devem ser confundidos com as
-atividades. Para a definição das atividades, deve-se partir dos
-objetivos determinados nesta seção. O objetivo Geral do Projeto
-necessariamente deve ser algum resultado prático (implementação) ou
-teórico (modelos formais ou especificações ou validações) produto da
-pesquisa realizada no período do Projeto. Assim como os objetivos
-específicos, que são considerados como sub-produtos do Objetivo
-Geral. Além disso, deve-se apresentar os principais resultados
-esperados do desenvolvimento desta dissertação.
+Este trabalho tem como objetivo estudar e aplicar técnicas de KDD aos dados do sistema Cobalto, para obter um padrão de predição da evasão de alunos através de dados inerentes aos estudantes da UFPEL. Para atingir este objetivo é preciso dividir o trabalho objetivos específicos.
+
+O primeiro é investigar o que esta sendo pesquisado na área de mineração de dados educacionais, tentando focar em trabalho que tratam da evasão de alunos.
+
+Em seguida é preciso fazer um levantamento do referencial teórico e apresentar os principais conceitos a repeito de mineração de dados educacionais. Mais especificamente seria estudar e apresentar os conceitos de KDD, mineração de dados e mineração de dados educacionais.
+
+Por fim, criar e testar modelos de predição de alunos em risco de evasão de estudantes da UFPEL, utilizando os dados acadêmicos do aluno.
+
+Em geral a grande maioria dos trabalho com este foco utilizam base de dados de sistemas de EAD. Neste trabalho será utilizado um base de dados histórica de alunos da UFPEL.
+
+% Nesta seção, apresentam-se o objetivo Geral e os objetivos Específicos
+% da dissertação. Os objetivos não devem ser confundidos com as
+% atividades. Para a definição das atividades, deve-se partir dos
+% objetivos determinados nesta seção. O objetivo Geral do Projeto
+% necessariamente deve ser algum resultado prático (implementação) ou
+% teórico (modelos formais ou especificações ou validações) produto da
+% pesquisa realizada no período do Projeto. Assim como os objetivos
+% específicos, que são considerados como sub-produtos do Objetivo
+% Geral. Além disso, deve-se apresentar os principais resultados
+% esperados do desenvolvimento desta dissertação.
 
 \chapter{Metodologia}
 % (ENTRE 1 e 3 PÁGINAS)
 
-Nesta seção, apresenta-se a metodologia proposta para o
-desenvolvimento da Dissertação. O proponente deve descrever as
-atividades necessárias para a conclusão dos objetivos propostos. 
+% O processo de mineração de dados envolve várias fases e etapas. Este trabalho classifica o processo de KDD em três grandes fases, com base nas abordagens descritas em [Silva and Vieira 2002] e [Rezende et al. 2003]: Preparação, Extração de Padrões e Pós-Processamento. Cada fase pode envolver uma ou mais etapas conforme mostra a tabela 1. No entanto, o KDD é um processo iterativo e algumas etapas podem ser realizadas novamente após a análise dos padrões encontrados de forma a melhorá-los \cite{Pimentel2006}.
+O processo de descoberta de conhecimento envolve várias fases e etapas. Para o desenvolvimento deste trabalho será utilizada a abordagem proposta por [Silva and Vieira 2002] e [Rezende et al. 2003] onde o processo pode ser separado em três fases: Preparação, Extração de Padrões e Pós-Processamento. Cada fase pode envolver uma ou mais etapas. No entanto, KDD é um processo iterativo e algumas etapas podem ser realizadas novamente após a análise dos padrões encontrados de forma a melhorá-los \cite{Pimentel2006}.
+
+Descoberta de conhecimento em base dados pode ser composto por várias etapas operacionais \cite{goldschmidt2015data}.
+Este trabalho será dividido em 3 grandes momentos: coleta dos dados, pré-processamento dos dados, criar e avaliar os modelos de predição.
+
+Na etapa de coleta será coletado todo o dado bruto referente aos alunos dos cursos de graduação da UFPEL. Esta etapa será feita de forma manual através de consultas a base de dados.
+Os sistemas de aplicações, conhecidos por OLTP (On-Line Transaction Processing), processam dados armazenados em Base de Dados relacionais usadas para armazenar, consultar e alterar informações do negócio. Normalmente, não é possível aplicar as técnicas de MD diretamente a estas bases, pois isso poderia resultar numa sobrecarga de consultas nas mesmas podendo literalmente “travar” um sistema, impossibilitando qualquer outro tipo de operação transacional. 
+Assim, é recomendável que os dados a serem utilizados na descoberta de conhecimento estejam separados da Base de Dados operacional. Nesses casos, utilização de DW é indicada, pois possibilita o armazenamento de grande quantidade de dados históricos de uma organização e viabiliza acessos otimizados aos dados previamente consolidados, reduzindo consideravelmente o tempo de realização do processo de MD \cite{Rezende2002}.
+
+Em seguida vem a etapa de pré-processamento onde será verificado a necessidade de fazer a limpeza e classificação dos dados para serem utilizados nos testes. Da mesma forma que a primeira esta etapa também sera feita de forma manual.
+
+De uma forma mais macro vem a terceira etapa onde será gerado um modelo de predição aplicando algoritmos de aprendizagem de máquina e posteriormente este modelo será avaliado a partir dos resultados.
+
+O processo de mineração de dados envolve várias fases e etapas. Este trabalho classifica o processo de KDD em três grandes fases, com base nas abordagens descritas em [Silva and Vieira 2002] e [Rezende et al. 2003]: Preparação, Extração de Padrões e Pós-Processamento. Cada fase pode envolver uma ou mais etapas conforme mostra a tabela 1. No entanto, o KDD é um processo iterativo e algumas etapas podem ser realizadas novamente após a análise dos padrões encontrados de forma a melhorá-los \cite{Pimentel2006}.
+
+
+
+% Nesta seção, apresenta-se a metodologia proposta para o
+% desenvolvimento da Dissertação. O proponente deve descrever as
+% atividades necessárias para a conclusão dos objetivos propostos. 
 
 \chapter{Cronograma}
 
@@ -123,7 +146,7 @@ modelagem, especificação, implementação ou validação) que deverão ser
 realizadas (incluindo atividades obrigatórias como seminário de
 andamento, entrega e apresentação da dissertação) e o cronograma
 destas atividades, distribuídas no prazo de 12
-meses~\cite{vonNeumann:1966:TSR}.
+meses.
 
 \bibliography{bibliografia}
 \bibliographystyle{abnt}
